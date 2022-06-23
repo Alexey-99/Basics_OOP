@@ -4,9 +4,12 @@
 
 package by.koroza.basics_oop.numberone.main;
 
+import by.koroza.basics_oop.numberone.entities.Directory;
+
 public class Main {
 
 	public static void main(String[] args) {
-
+		Directory directory = new Directory();
+		
 	}
 }
