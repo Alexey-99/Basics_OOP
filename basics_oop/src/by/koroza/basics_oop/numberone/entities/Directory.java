@@ -3,12 +3,49 @@ package by.koroza.basics_oop.numberone.entities;
 public class Directory {
 	private TextFile[] files;
 
+	public Directory() {
+		this.files = new TextFile[0];
+	}
+
+	public Directory(TextFile file) {
+		this.files = new TextFile[1];
+		this.files[0] = file;
+	}
+
+	public Directory(TextFile[] files) {
+		this.files = files;
+	}
+
 	public TextFile[] getFiles() {
 		return files;
 	}
 
 	public void setFiles(TextFile[] files) {
 		this.files = files;
+	}
+
+	public void addFile(TextFile file) {
+		TextFile[] filesNew = new TextFile[this.files.length + 1];
+		for (int i = 0; i < filesNew.length; i++) {
+			if (i < this.files.length) {
+				filesNew[i] = files[i];
+			} else if (i == this.files.length) {
+				filesNew[i] = file;
+			}
+		}
+		this.files = filesNew;
+	}
+
+	public void addFiles(TextFile[] files) {
+		TextFile[] filesNew = new TextFile[this.files.length + files.length];
+		for (int i = 0; i < filesNew.length; i++) {
+			if (i < this.files.length) {
+				filesNew[i] = files[i];
+			} else if (i >= this.files.length) {
+				filesNew[i] = files[i - this.files.length];
+			}
+		}
+		this.files = filesNew;
 	}
 
 	@Override
@@ -40,7 +77,7 @@ public class Directory {
 		}
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

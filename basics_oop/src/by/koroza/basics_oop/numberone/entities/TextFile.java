@@ -1,19 +1,19 @@
 package by.koroza.basics_oop.numberone.entities;
 
 public class TextFile {
-	private String title;
+	private String nameFile;
 	private String content;
 
 	public TextFile() {
 
 	}
 
-	public String getTitle() {
-		return title;
+	public String getNameFile() {
+		return nameFile;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setNameFile(String nameFile) {
+		this.nameFile = nameFile;
 	}
 
 	public String getContent() {
@@ -28,7 +28,7 @@ public class TextFile {
 	public int hashCode() {
 		int result = 31;
 		int prime = 1;
-		result = result * prime + (title != null ? title.hashCode() : 1);
+		result = result * prime + (nameFile != null ? nameFile.hashCode() : 1);
 		result = result * prime + (content != null ? content.hashCode() : 1);
 		return result;
 	}
@@ -45,11 +45,11 @@ public class TextFile {
 			return false;
 		}
 		TextFile textFile = (TextFile) object;
-		if (title == null) {
-			if (textFile.title != null) {
+		if (nameFile == null) {
+			if (textFile.nameFile != null) {
 				return false;
 			}
-		} else if (!title.equals(textFile.title)) {
+		} else if (!nameFile.equals(textFile.nameFile)) {
 			return false;
 		}
 		if (content == null) {
