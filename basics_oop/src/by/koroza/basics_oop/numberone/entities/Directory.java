@@ -1,7 +1,5 @@
 package by.koroza.basics_oop.numberone.entities;
 
-import by.koroza.programming_with_classes.composition.numberfive.entity.TravelCampany;
-
 public class Directory {
 	private TextFile[] files;
 
@@ -41,5 +39,11 @@ public class Directory {
 			return false;
 		}
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		return builder.toString();
 	}
 }
