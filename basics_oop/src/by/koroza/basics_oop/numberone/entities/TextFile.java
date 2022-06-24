@@ -24,6 +24,10 @@ public class TextFile {
 		this.content = content;
 	}
 
+	public void renameFile(String nameFile) {
+		setNameFile(nameFile);
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
@@ -65,6 +69,8 @@ public class TextFile {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append("Name file: ").append(nameFile).append("\n");
+		builder.append("Content: ").append(content).append("\n");
 		return builder.toString();
 	}
 }

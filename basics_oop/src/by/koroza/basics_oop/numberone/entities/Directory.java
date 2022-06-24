@@ -16,7 +16,7 @@ public class Directory {
 	public Directory(TextFile[] files) {
 		this.files = files;
 	}
-	
+
 	public String getNameDirectory() {
 		return nameDirectory;
 	}
@@ -57,11 +57,16 @@ public class Directory {
 		this.files = filesNew;
 	}
 
+	public void renameDirectory(String nameDirectory) {
+		setNameDirectory(nameDirectory);
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
 		int prime = 1;
 		result = result * prime + (files != null ? files.hashCode() : 1);
+		result = result * prime + (nameDirectory != null ? nameDirectory.hashCode() : 1);
 		return result;
 	}
 
@@ -77,6 +82,13 @@ public class Directory {
 			return false;
 		}
 		Directory directory = (Directory) object;
+		if (nameDirectory == null) {
+			if (directory.nameDirectory != null) {
+				return false;
+			}
+		} else if (!nameDirectory.equals(directory.nameDirectory)) {
+			return false;
+		}
 		if (files == null) {
 			if (directory.files != null) {
 				return false;
@@ -90,6 +102,14 @@ public class Directory {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append("Name directory: ").append(nameDirectory).append("\n");
+		if (this.files.length > 0) {
+			for (TextFile file : files) {
+				builder.append(file.toString());
+			}
+		} else {
+			builder.append("Derectory doesn't have text file");
+		}
 		return builder.toString();
 	}
 }
