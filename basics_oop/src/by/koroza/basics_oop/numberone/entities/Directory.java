@@ -1,6 +1,7 @@
 package by.koroza.basics_oop.numberone.entities;
 
 public class Directory {
+	private String nameDirectory;
 	private TextFile[] files;
 
 	public Directory() {
@@ -14,6 +15,14 @@ public class Directory {
 
 	public Directory(TextFile[] files) {
 		this.files = files;
+	}
+	
+	public String getNameDirectory() {
+		return nameDirectory;
+	}
+
+	public void setNameDirectory(String nameDirectory) {
+		this.nameDirectory = nameDirectory;
 	}
 
 	public TextFile[] getFiles() {
