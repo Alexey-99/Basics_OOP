@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 import by.koroza.basics_oop.numberone.entities.TextFile;
 
 public class Validation {
+	private static final String REG_EX_VALID_FOR_DIGITS = "\\d+";
 
 	public static boolean validationEnteredNumberFile(String number, TextFile[] files) {
 		boolean isCorrect = validationForDigit(number);
@@ -16,7 +17,7 @@ public class Validation {
 	}
 
 	private static boolean validationForDigit(String number) {
-		boolean isCorrect = Pattern.matches("\\d+", number);
+		boolean isCorrect = Pattern.matches(REG_EX_VALID_FOR_DIGITS, number);
 		return isCorrect;
 	}
 
