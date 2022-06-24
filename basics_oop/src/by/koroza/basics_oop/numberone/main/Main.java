@@ -18,5 +18,6 @@ public class Main {
 		System.out.println(directory.toString());
 		file.printContent();
 		directory.deleteFile();
+		System.out.println(directory.toString());
 	}
 }
