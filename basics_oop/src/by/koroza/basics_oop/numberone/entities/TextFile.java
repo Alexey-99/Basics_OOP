@@ -3,9 +3,16 @@ package by.koroza.basics_oop.numberone.entities;
 public class TextFile {
 	private String nameFile;
 	private String content;
+	private static final String NAME_FILE = "Name file: ";
+	private static final String CONTENT = "Content: ";
+	private static final String NEXT_LINE = "\n";
 
-	public TextFile() {
-
+	public TextFile(String nameFile) {
+		this.nameFile = nameFile;
+	}
+	
+	public TextFile(String nameFile, String content) {
+		this.nameFile = nameFile;
 	}
 
 	public String getNameFile() {
@@ -34,6 +41,9 @@ public class TextFile {
 		int prime = 1;
 		result = result * prime + (nameFile != null ? nameFile.hashCode() : 1);
 		result = result * prime + (content != null ? content.hashCode() : 1);
+		result = result * prime + (NAME_FILE != null ? NAME_FILE.hashCode() : 1);
+		result = result * prime + (CONTENT != null ? CONTENT.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
 		return result;
 	}
 
@@ -69,8 +79,8 @@ public class TextFile {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Name file: ").append(nameFile).append("\n");
-		builder.append("Content: ").append(content).append("\n");
+		builder.append(NAME_FILE).append(nameFile).append(NEXT_LINE);
+		builder.append(CONTENT).append(content).append(NEXT_LINE);
 		return builder.toString();
 	}
 }
