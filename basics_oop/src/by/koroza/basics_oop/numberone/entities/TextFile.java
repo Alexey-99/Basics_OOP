@@ -40,7 +40,7 @@ public class TextFile {
 	public void replenishContent(String content) {
 		this.content.append(content);
 	}
-	
+
 	public void printContent() {
 		System.out.println(content);
 	}

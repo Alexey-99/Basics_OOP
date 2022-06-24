@@ -72,7 +72,7 @@ public class Directory {
 	public void renameDirectory(String nameDirectory) {
 		setNameDirectory(nameDirectory);
 	}
-	
+
 	public void deleteFile() {
 		deleteFileEnteredNumber();
 	}
