@@ -3,6 +3,9 @@ package by.koroza.basics_oop.numberone.entities;
 public class Directory {
 	private String nameDirectory;
 	private TextFile[] files;
+	private static final String NAME_DIRECTORY = "Name directory: ";
+	private static final String DIRECTORY_DOES_NOT_HAVE_FILE = "Derectory doesn't have text file";
+	private static final String NEXT_LINE = "\n";
 
 	public Directory() {
 		this.files = new TextFile[0];
@@ -67,6 +70,9 @@ public class Directory {
 		int prime = 1;
 		result = result * prime + (files != null ? files.hashCode() : 1);
 		result = result * prime + (nameDirectory != null ? nameDirectory.hashCode() : 1);
+		result = result * prime + (NAME_DIRECTORY != null ? NAME_DIRECTORY.hashCode() : 1);
+		result = result * prime + (DIRECTORY_DOES_NOT_HAVE_FILE != null ? DIRECTORY_DOES_NOT_HAVE_FILE.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
 		return result;
 	}
 
@@ -102,13 +108,13 @@ public class Directory {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Name directory: ").append(nameDirectory).append("\n");
+		builder.append(NAME_DIRECTORY).append(nameDirectory).append(NEXT_LINE);
 		if (this.files.length > 0) {
 			for (TextFile file : files) {
 				builder.append(file.toString());
 			}
 		} else {
-			builder.append("Derectory doesn't have text file");
+			builder.append(DIRECTORY_DOES_NOT_HAVE_FILE);
 		}
 		return builder.toString();
 	}

@@ -2,17 +2,19 @@ package by.koroza.basics_oop.numberone.entities;
 
 public class TextFile {
 	private String nameFile;
-	private String content;
+	private StringBuilder content;
 	private static final String NAME_FILE = "Name file: ";
 	private static final String CONTENT = "Content: ";
 	private static final String NEXT_LINE = "\n";
 
 	public TextFile(String nameFile) {
 		this.nameFile = nameFile;
+		this.content = new StringBuilder();
 	}
-	
+
 	public TextFile(String nameFile, String content) {
 		this.nameFile = nameFile;
+		this.content = new StringBuilder(content);
 	}
 
 	public String getNameFile() {
@@ -23,16 +25,24 @@ public class TextFile {
 		this.nameFile = nameFile;
 	}
 
-	public String getContent() {
+	public StringBuilder getContent() {
 		return content;
 	}
 
 	public void setContent(String content) {
-		this.content = content;
+		this.content = new StringBuilder(content);
 	}
 
 	public void renameFile(String nameFile) {
 		setNameFile(nameFile);
+	}
+
+	public void replenishContent(String content) {
+		this.content.append(content);
+	}
+	
+	public void printContent() {
+		System.out.println(content);
 	}
 
 	@Override
