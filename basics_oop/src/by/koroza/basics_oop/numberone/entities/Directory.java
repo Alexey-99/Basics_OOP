@@ -1,5 +1,7 @@
 package by.koroza.basics_oop.numberone.entities;
 
+import java.util.Scanner;
+
 public class Directory {
 	private String nameDirectory;
 	private TextFile[] files;
@@ -7,16 +9,19 @@ public class Directory {
 	private static final String DIRECTORY_DOES_NOT_HAVE_FILE = "Derectory doesn't have text file";
 	private static final String NEXT_LINE = "\n";
 
-	public Directory() {
+	public Directory(String nameDirectory) {
+		this.nameDirectory = nameDirectory;
 		this.files = new TextFile[0];
 	}
 
-	public Directory(TextFile file) {
+	public Directory(String nameDirectory, TextFile file) {
+		this.nameDirectory = nameDirectory;
 		this.files = new TextFile[1];
 		this.files[0] = file;
 	}
 
-	public Directory(TextFile[] files) {
+	public Directory(String nameDirectory, TextFile[] files) {
+		this.nameDirectory = nameDirectory;
 		this.files = files;
 	}
 
@@ -62,6 +67,22 @@ public class Directory {
 
 	public void renameDirectory(String nameDirectory) {
 		setNameDirectory(nameDirectory);
+	}
+
+	public void deleteFile() {
+		printFiles();
+		String numberLine = "";
+		Scanner scan = new Scanner(System.in);
+		do {
+			System.out.println("Enter file number");
+			numberLine = scan.nextLine();
+		} while (false);
+	}
+
+	private void printFiles() {
+		for (int i = 0; i < files.length; i++) {
+			System.out.println(i + " - " + files[i].toString());
+		}
 	}
 
 	@Override
