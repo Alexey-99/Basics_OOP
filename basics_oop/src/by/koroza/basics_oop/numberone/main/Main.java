@@ -4,8 +4,8 @@
 
 package by.koroza.basics_oop.numberone.main;
 
-import by.koroza.basics_oop.numberone.entities.Directory;
-import by.koroza.basics_oop.numberone.entities.TextFile;
+import by.koroza.basics_oop.numberone.entitiy.Directory;
+import by.koroza.basics_oop.numberone.entitiy.TextFile;
 
 public class Main {
 

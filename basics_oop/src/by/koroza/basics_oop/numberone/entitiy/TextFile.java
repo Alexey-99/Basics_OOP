@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberone.entities;
+package by.koroza.basics_oop.numberone.entitiy;
 
 public class TextFile {
 	private String nameFile;
