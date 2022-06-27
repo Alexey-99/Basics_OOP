@@ -24,7 +24,7 @@ public class TextFile {
 	public void setNameFile(String nameFile) {
 		this.nameFile = nameFile;
 	}
-
+ 
 	public StringBuilder getContent() {
 		return content;
 	}
