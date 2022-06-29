@@ -5,6 +5,10 @@ public class Payment {
 	private BankAccount senderAccount;
 	private BankAccount beneficiaryAccount;
 
+	public Payment() {
+		
+	}
+	
 	public double getSum() {
 		return sum;
 	}
