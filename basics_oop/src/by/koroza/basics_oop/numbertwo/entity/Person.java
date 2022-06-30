@@ -8,6 +8,65 @@ public class Person {
 	private String firstName;
 	private String patronymic;
 	private BankAccount[] bankAccounts;
+	private Product[] products;
+
+	public Person(String lastName, String firstName, String patronymic, BankAccount[] bankAccounts) {
+		this.id = count++;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.patronymic = patronymic;
+		this.bankAccounts = bankAccounts;
+	}
+
+	public Person(String lastName, String firstName, String patronymic, BankAccount bankAccount) {
+		this.id = count++;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.patronymic = patronymic;
+		this.bankAccounts = new BankAccount[1];
+		this.bankAccounts[0] = bankAccount;
+	}
+
+	public Person(String lastName, String firstName, String patronymic, BankAccount[] bankAccounts,
+			Product[] products) {
+		this.id = count++;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.patronymic = patronymic;
+		this.bankAccounts = bankAccounts;
+		this.products = products;
+	}
+
+	public Person(String lastName, String firstName, String patronymic, BankAccount bankAccount, Product[] products) {
+		this.id = count++;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.patronymic = patronymic;
+		this.bankAccounts = new BankAccount[1];
+		this.bankAccounts[0] = bankAccount;
+		this.products = products;
+	}
+
+	public Person(String lastName, String firstName, String patronymic, BankAccount[] bankAccounts, Product product) {
+		this.id = count++;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.patronymic = patronymic;
+		this.bankAccounts = bankAccounts;
+		this.products = new Product[1];
+		this.products[0] = product;
+	}
+
+	public Person(String lastName, String firstName, String patronymic, BankAccount bankAccount, Product product) {
+		this.id = count++;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.patronymic = patronymic;
+		this.bankAccounts = new BankAccount[1];
+		this.bankAccounts[0] = bankAccount;
+		this.products = new Product[1];
+		this.products[0] = product;
+	}
 
 	public int getId() {
 		return id;
@@ -59,6 +118,7 @@ public class Person {
 		result = result * prime + (firstName != null ? firstName.hashCode() : 1);
 		result = result * prime + (patronymic != null ? patronymic.hashCode() : 1);
 		result = result * prime + (bankAccounts != null ? bankAccounts.hashCode() : 1);
+		result = result * prime + (products != null ? products.hashCode() : 1);
 		return result;
 	}
 
@@ -103,6 +163,13 @@ public class Person {
 				return false;
 			}
 		} else if (!bankAccounts.equals(person.bankAccounts)) {
+			return false;
+		}
+		if (products == null) {
+			if (person.products != null) {
+				return false;
+			}
+		} else if (!products.equals(person.products)) {
 			return false;
 		}
 		return true;
