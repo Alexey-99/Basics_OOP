@@ -100,10 +100,10 @@ public class ProgramProcess {
 	private static String enterProductName() {
 		Scanner scan = new Scanner(System.in);
 		String name = "";
+		System.out.println(ENTER_PRODUCT_NAME);
 		do {
-			System.out.println(ENTER_PRODUCT_NAME);
 			name = scan.nextLine();
-		} while (Validation.validationPersonName(name) == false);
+		} while (Validation.validationProductName(name) == false);
 		return name;
 	}
 }
