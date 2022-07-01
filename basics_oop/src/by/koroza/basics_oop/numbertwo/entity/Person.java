@@ -87,19 +87,19 @@ public class Person {
 			if (i < this.bankAccounts.length) {
 				newBankAccounts[i] = this.bankAccounts[i];
 			} else if (i == this.bankAccounts.length) {
-				newBankAccounts[i] = this.bankAccounts[i];
+				newBankAccounts[i] = new BankAccount();
 			}
 		}
 		this.bankAccounts = newBankAccounts;
 	}
-	
-	public void addProduct() {
+
+	public void addProduct(Product product) {
 		Product[] newProducts = new Product[this.products.length + 1];
 		for (int i = 0; i < newProducts.length; i++) {
 			if (i < this.products.length) {
 				newProducts[i] = this.products[i];
 			} else if (i == this.products.length) {
-				newProducts[i] = this.products[i];
+				newProducts[i] = product;
 			}
 		}
 		this.products = newProducts;
