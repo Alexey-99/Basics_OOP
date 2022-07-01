@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numbertwo.process;
+package by.koroza.basics_oop.numbertwo.main.process;
 
 import java.util.Scanner;
 
