@@ -10,60 +10,33 @@ public class Person {
 	private BankAccount[] bankAccounts;
 	private Product[] products;
 
-	public Person(String lastName, String firstName, String patronymic, BankAccount[] bankAccounts) {
-		this.id = count++;
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.patronymic = patronymic;
-		this.bankAccounts = bankAccounts;
-	}
-
-	public Person(String lastName, String firstName, String patronymic, BankAccount bankAccount) {
+	public Person(String lastName, String firstName, String patronymic) {
 		this.id = count++;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.patronymic = patronymic;
 		this.bankAccounts = new BankAccount[1];
-		this.bankAccounts[0] = bankAccount;
+		this.bankAccounts[0] = new BankAccount();
+		this.products = new Product[0];
 	}
 
-	public Person(String lastName, String firstName, String patronymic, BankAccount[] bankAccounts,
-			Product[] products) {
+	public Person(String lastName, String firstName, String patronymic, Product[] products) {
 		this.id = count++;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.patronymic = patronymic;
-		this.bankAccounts = bankAccounts;
+		this.bankAccounts = new BankAccount[1];
+		this.bankAccounts[0] = new BankAccount();
 		this.products = products;
 	}
 
-	public Person(String lastName, String firstName, String patronymic, BankAccount bankAccount, Product[] products) {
+	public Person(String lastName, String firstName, String patronymic, Product product) {
 		this.id = count++;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.patronymic = patronymic;
 		this.bankAccounts = new BankAccount[1];
-		this.bankAccounts[0] = bankAccount;
-		this.products = products;
-	}
-
-	public Person(String lastName, String firstName, String patronymic, BankAccount[] bankAccounts, Product product) {
-		this.id = count++;
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.patronymic = patronymic;
-		this.bankAccounts = bankAccounts;
-		this.products = new Product[1];
-		this.products[0] = product;
-	}
-
-	public Person(String lastName, String firstName, String patronymic, BankAccount bankAccount, Product product) {
-		this.id = count++;
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.patronymic = patronymic;
-		this.bankAccounts = new BankAccount[1];
-		this.bankAccounts[0] = bankAccount;
+		this.bankAccounts[0] = new BankAccount();
 		this.products = new Product[1];
 		this.products[0] = product;
 	}
@@ -106,6 +79,18 @@ public class Person {
 
 	public void setBankAccounts(BankAccount[] bankAccounts) {
 		this.bankAccounts = bankAccounts;
+	}
+
+	public void addBankAccount() {
+		BankAccount[] newBankAccounts = new BankAccount[this.bankAccounts.length + 1];
+		for (int i = 0; i < newBankAccounts.length; i++) {
+			if (i < this.bankAccounts.length) {
+				newBankAccounts[i] = this.bankAccounts[i];
+			} else if (i == this.bankAccounts.length) {
+				newBankAccounts[i] = this.bankAccounts[i];
+			}
+		}
+		this.bankAccounts = newBankAccounts;
 	}
 
 	@Override
