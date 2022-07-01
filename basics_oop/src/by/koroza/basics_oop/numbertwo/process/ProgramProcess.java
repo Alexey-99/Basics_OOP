@@ -14,6 +14,7 @@ public class ProgramProcess {
 	private static final String SPACE = " ";
 	private static final String YES = "0";
 	private static final String ENTER_PRODUCT_NAME = "Enter product name.";
+	private static final String ENTER_PRODUCT_PRICE = "Enter product price.";
 
 	public static void programProcess() {
 		Person salesman = createSalesman();
@@ -92,10 +93,11 @@ public class ProgramProcess {
 	}
 
 	private static Product createProduct() {
-		Product product = new Product(enterProductName(), 1.5);
+		Product product = new Product(enterProductName(), enterProductPrice());
+		 ;
 		return product;
 	}
-	
+
 	@SuppressWarnings("resource")
 	private static String enterProductName() {
 		Scanner scan = new Scanner(System.in);
@@ -105,5 +107,17 @@ public class ProgramProcess {
 			name = scan.nextLine();
 		} while (Validation.validationProductName(name) == false);
 		return name;
+	}
+
+	@SuppressWarnings("resource")
+	private static double enterProductPrice() {
+		Scanner scan = new Scanner(System.in);
+		String priceStr = "";
+		System.out.println(ENTER_PRODUCT_PRICE);
+		do {
+			priceStr = scan.nextLine();
+		} while (Validation.validationProductPrice(priceStr) == false);
+		double price = Double.parseDouble(priceStr);
+		return price;
 	}
 }
