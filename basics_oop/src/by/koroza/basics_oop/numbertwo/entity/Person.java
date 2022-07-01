@@ -92,6 +92,18 @@ public class Person {
 		}
 		this.bankAccounts = newBankAccounts;
 	}
+	
+	public void addProduct() {
+		Product[] newProducts = new Product[this.products.length + 1];
+		for (int i = 0; i < newProducts.length; i++) {
+			if (i < this.products.length) {
+				newProducts[i] = this.products[i];
+			} else if (i == this.products.length) {
+				newProducts[i] = this.products[i];
+			}
+		}
+		this.products = newProducts;
+	}
 
 	@Override
 	public int hashCode() {
