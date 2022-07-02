@@ -20,27 +20,6 @@ public class Person {
 		this.products = new Product[0];
 	}
 
-	public Person(String lastName, String firstName, String patronymic, Product[] products) {
-		this.id = count++;
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.patronymic = patronymic;
-		this.bankAccounts = new BankAccount[1];
-		this.bankAccounts[0] = new BankAccount();
-		this.products = products;
-	}
-
-	public Person(String lastName, String firstName, String patronymic, Product product) {
-		this.id = count++;
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.patronymic = patronymic;
-		this.bankAccounts = new BankAccount[1];
-		this.bankAccounts[0] = new BankAccount();
-		this.products = new Product[1];
-		this.products[0] = product;
-	}
-
 	public int getId() {
 		return id;
 	}
