@@ -94,7 +94,6 @@ public class ProgramProcess {
 
 	private static Product createProduct() {
 		Product product = new Product(enterProductName(), enterProductPrice());
-		 ;
 		return product;
 	}
 
