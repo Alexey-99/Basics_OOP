@@ -9,6 +9,7 @@ public class Person {
 	private String patronymic;
 	private BankAccount[] bankAccounts;
 	private Product[] products;
+	private static final String SALESMAN_DOES_NOT_HAVE_PRODUCTS = "Salesman doesn't have products for sale";
 
 	public Person(String lastName, String firstName, String patronymic) {
 		this.id = count++;
@@ -84,6 +85,17 @@ public class Person {
 		this.products = newProducts;
 	}
 
+	public void printProducts() {
+		if (this.products.length > 0) {
+			for (int i = 0; i < this.products.length; i++) {
+				System.out.println(i + " - " + products.toString());
+			}
+		}else {
+			System.out.println(SALESMAN_DOES_NOT_HAVE_PRODUCTS);
+		}
+
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
@@ -95,6 +107,7 @@ public class Person {
 		result = result * prime + (patronymic != null ? patronymic.hashCode() : 1);
 		result = result * prime + (bankAccounts != null ? bankAccounts.hashCode() : 1);
 		result = result * prime + (products != null ? products.hashCode() : 1);
+		result = result * prime + (SALESMAN_DOES_NOT_HAVE_PRODUCTS != null ? SALESMAN_DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
 		return result;
 	}
 
