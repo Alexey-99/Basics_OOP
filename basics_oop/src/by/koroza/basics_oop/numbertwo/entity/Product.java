@@ -3,13 +3,16 @@ package by.koroza.basics_oop.numbertwo.entity;
 public class Product {
 	private String name;
 	private double price;
+	private boolean status;
 	private static final String PRODUCT_NAME = "Product name: ";
 	private static final String PRODUCT_PRICE = "Product price: ";
 	private static final String NEXT_LINE = "\n";
+	private static final String PRODUCT_RESERVED = "This product reserved.";
 
 	public Product(String name, double price) {
 		this.name = name;
 		this.price = price;
+		this.status = true;
 	}
 
 	public String getName() {
@@ -28,15 +31,25 @@ public class Product {
 		this.price = price;
 	}
 
+	public boolean getIsStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
 		int prime = 1;
 		result = result * prime + (name != null ? name.hashCode() : 1);
 		result = result * prime + Double.hashCode(price);
+		result = result * prime + Boolean.hashCode(status);
 		result = result * prime + (PRODUCT_NAME != null ? PRODUCT_NAME.hashCode() : 1);
 		result = result * prime + (PRODUCT_PRICE != null ? PRODUCT_PRICE.hashCode() : 1);
 		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
+		result = result * prime + (PRODUCT_RESERVED != null ? PRODUCT_RESERVED.hashCode() : 1);
 		return result;
 	}
 
@@ -62,6 +75,9 @@ public class Product {
 		if (price != product.price) {
 			return false;
 		}
+		if (status != product.status) {
+			return false;
+		}
 		return true;
 	}
 
@@ -69,7 +85,10 @@ public class Product {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(PRODUCT_NAME).append(name).append(NEXT_LINE);
-		builder.append(PRODUCT_PRICE).append(price);
+		builder.append(PRODUCT_PRICE).append(price).append(NEXT_LINE);
+		if (status == false) {
+			builder.append(PRODUCT_RESERVED);
+		}
 		return builder.toString();
 	}
 }

@@ -7,9 +7,9 @@ import by.koroza.basics_oop.numbertwo.entity.Product;
 import by.koroza.basics_oop.numbertwo.validation.Validation;
 
 public class CreationSalesmanAndCuctomer {
-	private static final String ENTER_LAST_NAME = "Enter last name (Example: Koroza)";
-	private static final String ENTER_FIRST_NAME = "Enter first name (Example: Alexey)";
-	private static final String ENTER_PATRONYMIC = "Enter patronymic (Example: Mikhailovich)";
+	private static final String ENTER_LAST_NAME = " enter last name (Example: Koroza)";
+	private static final String ENTER_FIRST_NAME = " enter first name (Example: Alexey)";
+	private static final String ENTER_PATRONYMIC = " enter patronymic (Example: Mikhailovich)";
 	private static final String DO_YOU_WANT_ADD_PRODUCT = "do you want to add a product? Enter Yes - 0, No - 1 ";
 	private static final String SPACE = " ";
 	private static final String YES = "0";
@@ -34,7 +34,7 @@ public class CreationSalesmanAndCuctomer {
 		Scanner scan = new Scanner(System.in);
 		String lastName = "";
 		do {
-			System.out.println(ENTER_LAST_NAME);
+			System.out.println(person + ENTER_LAST_NAME);
 			lastName = scan.nextLine();
 		} while (Validation.validationPersonName(lastName) == false);
 		return lastName;
@@ -45,7 +45,7 @@ public class CreationSalesmanAndCuctomer {
 		Scanner scan = new Scanner(System.in);
 		String firstName = "";
 		do {
-			System.out.println(ENTER_FIRST_NAME);
+			System.out.println(person + ENTER_FIRST_NAME);
 			firstName = scan.nextLine();
 		} while (Validation.validationPersonName(firstName) == false);
 		return firstName;
@@ -56,7 +56,7 @@ public class CreationSalesmanAndCuctomer {
 		Scanner scan = new Scanner(System.in);
 		String patronymic = "";
 		do {
-			System.out.println(ENTER_PATRONYMIC);
+			System.out.println(person + ENTER_PATRONYMIC);
 			patronymic = scan.nextLine();
 		} while (Validation.validationPersonName(patronymic) == false);
 		return patronymic;

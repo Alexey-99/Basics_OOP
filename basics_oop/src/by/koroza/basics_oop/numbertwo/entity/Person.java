@@ -60,6 +60,14 @@ public class Person {
 	public void setBankAccounts(BankAccount[] bankAccounts) {
 		this.bankAccounts = bankAccounts;
 	}
+	
+	public Product[] getProducts() {
+		return products;
+	}
+
+	public void setProducts(Product[] products) {
+		this.products = products;
+	}
 
 	public void addBankAccount() {
 		BankAccount[] newBankAccounts = new BankAccount[this.bankAccounts.length + 1];
@@ -88,9 +96,9 @@ public class Person {
 	public void printProducts() {
 		if (this.products.length > 0) {
 			for (int i = 0; i < this.products.length; i++) {
-				System.out.println(i + " - " + products.toString());
+				System.out.println(i + " - " + products[i].toString());
 			}
-		}else {
+		} else {
 			System.out.println(SALESMAN_DOES_NOT_HAVE_PRODUCTS);
 		}
 
@@ -107,7 +115,8 @@ public class Person {
 		result = result * prime + (patronymic != null ? patronymic.hashCode() : 1);
 		result = result * prime + (bankAccounts != null ? bankAccounts.hashCode() : 1);
 		result = result * prime + (products != null ? products.hashCode() : 1);
-		result = result * prime + (SALESMAN_DOES_NOT_HAVE_PRODUCTS != null ? SALESMAN_DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
+		result = result * prime
+				+ (SALESMAN_DOES_NOT_HAVE_PRODUCTS != null ? SALESMAN_DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
 		return result;
 	}
 
