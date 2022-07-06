@@ -11,12 +11,14 @@ public class Payment {
 	private static final String DOES_NOT_MONEY_IN_BANK_ACCOUNT = "you doesn't have enough moneyin your bank account. ";
 	private static final String WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT = "Would you want to top up your account? Enter Yes - 0, No - 1";
 	private static final String SPACE = " ";
+	private static final String YES = "0";
+	private static final String NO = "1";
 
 	public static void payment(Person salesman, Person customer) {
 		BankAccount[] bankAccountsSalesman = salesman.getBankAccounts();
 		BankAccount[] bankAccountsCustomer = customer.getBankAccounts();
 		double sumPayment = calculationSumPayment(customer.getProducts());
-		
+
 	}
 
 	private static double calculationSumPayment(Product[] products) {
@@ -26,24 +28,24 @@ public class Payment {
 		}
 		return sum;
 	}
-	
-	private static void checkBalanceCustomer(Person customer, double sumPayment) {
-		if(customer.getBankAccounts().length > 1) {
-			
-		}else if(customer.getBankAccounts().length == 1) {
-			if(customer.getBankAccounts()[0].getBalance() < sumPayment) {
+
+	private static void checkBalanceCustomer(Person salesman, Person customer, double sumPayment) {
+		if (customer.getBankAccounts().length > 1) {
+
+		} else if (customer.getBankAccounts().length == 1) {
+			if (customer.getBankAccounts()[0].getBalance() < sumPayment) {
 				String answer = enterAnswerOnReplemenishmentBankAccount(customer);
-				if(answer.equals("0")) {
-					
-				}else if(answer.equals("1")) {
-					
+				if (answer.equals(YES)) {
+
+				} else if (answer.equals(NO)) {
+					withdrawalReserves(salesman, customer);
 				}
 			}
-		}else if(customer.getBankAccounts().length == 0) {
+		} else if (customer.getBankAccounts().length == 0) {
 			System.out.println();
 		}
 	}
-	
+
 	@SuppressWarnings("resource")
 	private static String enterAnswerOnReplemenishmentBankAccount(Person customer) {
 		StringBuilder builder = new StringBuilder();
@@ -59,8 +61,21 @@ public class Payment {
 		} while (Validation.validationAnswerZeroOrOne(answer) == false);
 		return answer;
 	}
-	
+
 	private static void withdrawalReserves(Person salesman, Person customer) {
-		
+		withdrawalReservesSalesman(salesman);
+		withdrawalReservesCustomer(customer);
+	}
+
+	private static void withdrawalReservesSalesman(Person salesman) {
+		for (Product product : salesman.getProducts()) {
+			if (product.getIsStatus() == false) {
+				product.setStatus(true);
+			}
+		}
+	}
+
+	private static void withdrawalReservesCustomer(Person customer) {
+		customer.setProducts(new Product[0]);
 	}
 }
