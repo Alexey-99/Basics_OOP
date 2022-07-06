@@ -57,7 +57,7 @@ public class ProgramProcess {
 			numberProduct = enterNumberProductForBuy(salesman, customer);
 			if (numberProduct < salesman.getProducts().length) {
 				customer.addProduct(salesman.getProducts()[numberProduct]);
-				salesman.getProducts()[numberProduct].setStatus(STATUS_RESERVED);
+				salesman.getProducts()[numberProduct].setIsStatus(STATUS_RESERVED);
 			}
 		} while (numberProduct < salesman.getProducts().length);
 	}
