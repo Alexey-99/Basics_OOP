@@ -18,7 +18,7 @@ public class Payment {
 		BankAccount[] bankAccountsSalesman = salesman.getBankAccounts();
 		BankAccount[] bankAccountsCustomer = customer.getBankAccounts();
 		double sumPayment = calculationSumPayment(customer.getProducts());
-
+		checkBalanceCustomer(salesman, customer, sumPayment);
 	}
 
 	private static double calculationSumPayment(Product[] products) {
