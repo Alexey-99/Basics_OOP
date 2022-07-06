@@ -1,6 +1,9 @@
 package by.koroza.basics_oop.numbertwo.entity;
 
 public class Product {
+	private static int count = 1;
+
+	private int id;
 	private String name;
 	private double price;
 	private boolean status;
@@ -10,6 +13,7 @@ public class Product {
 	private static final String PRODUCT_RESERVED = "This product reserved.";
 
 	public Product(String name, double price) {
+		this.id = count++;
 		this.name = name;
 		this.price = price;
 		this.status = true;
@@ -35,14 +39,24 @@ public class Product {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setIsStatus(boolean status) {
 		this.status = status;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
 	public int hashCode() {
 		int result = 31;
 		int prime = 1;
+		result = result * prime + count;
+		result = result * prime + id;
 		result = result * prime + (name != null ? name.hashCode() : 1);
 		result = result * prime + Double.hashCode(price);
 		result = result * prime + Boolean.hashCode(status);

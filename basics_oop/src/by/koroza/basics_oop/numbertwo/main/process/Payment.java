@@ -37,12 +37,12 @@ public class Payment {
 				String answer = enterAnswerOnReplemenishmentBankAccount(customer);
 				if (answer.equals(YES)) {
 
-				} else if (answer.equals(NO)) {
-					withdrawalReserves(salesman, customer);
+				} else if (answer.equals(NO)) { // Do you want to delete a product from array customer?
+					//withdrawalReserves(salesman, customer);
 				}
 			}
 		} else if (customer.getBankAccounts().length == 0) {
-			System.out.println();
+			withdrawalReserves(salesman, customer);
 		}
 	}
 
@@ -70,7 +70,7 @@ public class Payment {
 	private static void withdrawalReservesSalesman(Person salesman) {
 		for (Product product : salesman.getProducts()) {
 			if (product.getIsStatus() == false) {
-				product.setStatus(true);
+				product.setIsStatus(true);
 			}
 		}
 	}

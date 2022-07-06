@@ -10,6 +10,7 @@ public class Person {
 	private BankAccount[] bankAccounts;
 	private Product[] products;
 	private static final String SALESMAN_DOES_NOT_HAVE_PRODUCTS = "Salesman doesn't have products for sale";
+	private static final int ONE_ELEMENT = 1;
 
 	public Person(String lastName, String firstName, String patronymic) {
 		this.id = count++;
@@ -60,7 +61,7 @@ public class Person {
 	public void setBankAccounts(BankAccount[] bankAccounts) {
 		this.bankAccounts = bankAccounts;
 	}
-	
+
 	public Product[] getProducts() {
 		return products;
 	}
@@ -70,7 +71,7 @@ public class Person {
 	}
 
 	public void addBankAccount() {
-		BankAccount[] newBankAccounts = new BankAccount[this.bankAccounts.length + 1];
+		BankAccount[] newBankAccounts = new BankAccount[this.bankAccounts.length + ONE_ELEMENT];
 		for (int i = 0; i < newBankAccounts.length; i++) {
 			if (i < this.bankAccounts.length) {
 				newBankAccounts[i] = this.bankAccounts[i];
@@ -82,12 +83,23 @@ public class Person {
 	}
 
 	public void addProduct(Product product) {
-		Product[] newProducts = new Product[this.products.length + 1];
+		Product[] newProducts = new Product[this.products.length + ONE_ELEMENT];
 		for (int i = 0; i < newProducts.length; i++) {
 			if (i < this.products.length) {
 				newProducts[i] = this.products[i];
 			} else if (i == this.products.length) {
 				newProducts[i] = product;
+			}
+		}
+		this.products = newProducts;
+	}
+
+	public void deleteProduct(Product product) {
+		Product[] newProducts = new Product[this.products.length - ONE_ELEMENT];
+		int newProductsIndex = 0;
+		for (int i = 0; i < newProducts.length; i++) {
+			if (newProducts[i].getId() != product.getId()) {
+				newProducts[newProductsIndex] = this.products[i];
 			}
 		}
 		this.products = newProducts;
