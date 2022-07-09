@@ -7,11 +7,11 @@ import by.koroza.basics_oop.numbertwo.entity.Product;
 import by.koroza.basics_oop.numbertwo.validation.Validation;
 
 public class Payment {
-	private static final String DOES_NOT_MONEY_IN_BANK_ACCOUNT = "you doesn't have enough moneyin your bank account. ";
-	private static final String WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT = "Would you want to top up your account? Enter Yes - 0, No - 1";
+	private static final String MASSEGE_DOES_NOT_MONEY_IN_BANK_ACCOUNT = "you doesn't have enough moneyin your bank account. ";
+	private static final String MASSEGE_WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT = "Would you want to top up your account? Enter Yes - 0, No - 1";
 	private static final String SPACE = " ";
-	private static final String YES = "0";
-	private static final String NO = "1";
+	private static final String CODE_YES = "0";
+	private static final String CODE_NO = "1";
 
 	public static void payment(Person salesman, Person customer) {
 		double sumPayment = calculationSumPayment(customer.getProducts());
@@ -29,10 +29,10 @@ public class Payment {
 	private static void checkBalanceCustomer(Person salesman, Person customer, double sumPayment) {
 		if (customer.getBankAccount().getBalance() < sumPayment) {
 			String answer = enterAnswerOnReplemenishmentBankAccount(customer);
-			if (answer.equals(YES)) {
+			if (answer.equals(CODE_YES)) {
 				customer.getBankAccount().replenishmentBalance(sumPayment - customer.getBankAccount().getBalance());
 				transferringMoney(salesman, customer, sumPayment);
-			} else if (answer.equals(NO)) {
+			} else if (answer.equals(CODE_NO)) {
 				withdrawalReserves(salesman, customer);
 			}
 		} else {
@@ -45,7 +45,7 @@ public class Payment {
 		builder.append(customer.getLastName()).append(SPACE);
 		builder.append(customer.getFirstName()).append(SPACE);
 		builder.append(customer.getPatronymic()).append(SPACE);
-		builder.append(DOES_NOT_MONEY_IN_BANK_ACCOUNT).append(SPACE).append(WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT);
+		builder.append(MASSEGE_DOES_NOT_MONEY_IN_BANK_ACCOUNT).append(SPACE).append(MASSEGE_WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT);
 		String answer = enterAnswerYesOrNo(builder);
 		return answer;
 	}
