@@ -11,6 +11,13 @@ public class Person {
 	private Product[] products;
 	private static final String MESSAGE_DOES_NOT_HAVE_PRODUCTS = "Doesn't have products for sale";
 	private static final int ONE_ELEMENT = 1;
+	private static final String LINE_ID = "ID: ";
+	private static final String NEXT_LINE = "\n";
+	private static final String LINE_LAST_NAME = "Last name: ";
+	private static final String LINE_FIRST_NAME = "First name: ";
+	private static final String LINE_PATRONYMIC = "Patronymic: ";
+	private static final String LINE_BANK_ACCOUNT = "Bank account: ";
+	private static final String LINE_PRODUCTS = "Products: ";
 
 	public Person(String lastName, String firstName, String patronymic) {
 		this.id = count++;
@@ -113,7 +120,16 @@ public class Person {
 		result = result * prime + (patronymic != null ? patronymic.hashCode() : 1);
 		result = result * prime + (bankAccount != null ? bankAccount.hashCode() : 1);
 		result = result * prime + (products != null ? products.hashCode() : 1);
-		result = result * prime + (MESSAGE_DOES_NOT_HAVE_PRODUCTS != null ? MESSAGE_DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
+		result = result * prime
+				+ (MESSAGE_DOES_NOT_HAVE_PRODUCTS != null ? MESSAGE_DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
+		result = result * prime + (LINE_ID != null ? LINE_ID.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
+		result = result * prime + (LINE_LAST_NAME != null ? LINE_LAST_NAME.hashCode() : 1);
+		result = result * prime + (LINE_FIRST_NAME != null ? LINE_FIRST_NAME.hashCode() : 1);
+		result = result * prime + (LINE_PATRONYMIC != null ? LINE_PATRONYMIC.hashCode() : 1);
+		result = result * prime + (LINE_BANK_ACCOUNT != null ? LINE_BANK_ACCOUNT.hashCode() : 1);
+		result = result * prime + (LINE_PRODUCTS != null ? LINE_PRODUCTS.hashCode() : 1);
+
 		return result;
 	}
 
@@ -171,8 +187,20 @@ public class Person {
 	}
 
 	@Override
-	public String toString() { // TODO toString()
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append(LINE_ID).append(id).append(NEXT_LINE);
+		builder.append(LINE_LAST_NAME).append(lastName).append(NEXT_LINE);
+		builder.append(LINE_FIRST_NAME).append(lastName).append(NEXT_LINE);
+		builder.append(LINE_PATRONYMIC).append(lastName).append(NEXT_LINE);
+		builder.append(LINE_BANK_ACCOUNT).append(NEXT_LINE);
+		builder.append(bankAccount.toString());
+		if (products.length > 0) {
+			builder.append(LINE_PRODUCTS).append(NEXT_LINE);
+			for (Product product : products) {
+				product.toString();
+			}
+		}
 		return builder.toString();
 	}
 }

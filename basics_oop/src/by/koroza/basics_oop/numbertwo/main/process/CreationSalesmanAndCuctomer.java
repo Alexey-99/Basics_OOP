@@ -11,7 +11,7 @@ public class CreationSalesmanAndCuctomer {
 	private static final String MESSAGE_ENTER_FIRST_NAME = " enter first name (Example: Alexey)";
 	private static final String MESSAGE_ENTER_PATRONYMIC = " enter patronymic (Example: Mikhailovich)";
 	private static final String MESSAGE_DO_YOU_WANT_ADD_PRODUCT = "do you want to add a product? Enter Yes - 0, No - 1 ";
-	private static final String SPACE = " ";
+	private static final String LINE_SPACE = " ";
 	private static final String CODE_YES = "0";
 	private static final String MESSAGE_ENTER_PRODUCT_NAME = "Enter product name.";
 	private static final String MESSAGE_ENTER_PRODUCT_PRICE = "Enter product price.";
@@ -79,9 +79,9 @@ public class CreationSalesmanAndCuctomer {
 	@SuppressWarnings("resource")
 	private static String productAdditionConfirmation(Person person) {
 		StringBuilder builder = new StringBuilder();
-		builder.append(person.getLastName()).append(SPACE);
-		builder.append(person.getFirstName()).append(SPACE);
-		builder.append(person.getPatronymic()).append(SPACE);
+		builder.append(person.getLastName()).append(LINE_SPACE);
+		builder.append(person.getFirstName()).append(LINE_SPACE);
+		builder.append(person.getPatronymic()).append(LINE_SPACE);
 		builder.append(MESSAGE_DO_YOU_WANT_ADD_PRODUCT);
 		Scanner scan = new Scanner(System.in);
 		String answer = "";
