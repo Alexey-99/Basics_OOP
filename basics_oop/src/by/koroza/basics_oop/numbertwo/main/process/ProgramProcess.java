@@ -9,6 +9,7 @@ public class ProgramProcess {
 	private static final String ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";
 	private static final String SPACE = " ";
 	private static final String EXIT = "exit";
+	private static final String YOU_ENTERED_INCORRECTLY = "You entered incorrectly.";
 	private static final Boolean STATUS_RESERVED = false;
 
 	public static void programProcess() {
@@ -35,8 +36,7 @@ public class ProgramProcess {
 
 	@SuppressWarnings("resource")
 	private static int enterNumberProductForBuy(Person salesman, Person customer) {
-		Scanner scan = new Scanner(System.in);
-		String number = "";
+		int number = 0;
 		StringBuilder builder = new StringBuilder();
 		builder.append(customer.getLastName()).append(SPACE);
 		builder.append(customer.getFirstName()).append(SPACE);
@@ -44,10 +44,14 @@ public class ProgramProcess {
 		builder.append(ENTER_PRODUCT_NUMBER);
 		System.out.println(builder);
 		do {
-			number = scan.nextLine();
+			Scanner scan = new Scanner(System.in);
+			if (scan.hasNextInt()) {
+				number = scan.nextInt();
+			} else {
+				System.out.println(YOU_ENTERED_INCORRECTLY);
+			}
 		} while (Validation.validationEnteredNumberForBuy(number, salesman) == false);
-		int numberProduct = Integer.parseInt(number);
-		return numberProduct;
+		return number;
 	}
 
 	private static void selectionProductsForBuy(Person salesman, Person customer) {

@@ -46,20 +46,16 @@ public class Validation {
 		return isCorrect;
 	}
 
-	public static boolean validationEnteredNumberForBuy(String number, Person salesman) {
-		int numberInt = 0;
-		boolean isCorrect = Pattern.matches(REG_EXR_ON_DIGITS, number);
-		if (isCorrect == true) {
-			numberInt = Integer.parseInt(number);
-			if (numberInt >= salesman.getProducts().length + OPERATION_EXIT) {
-				isCorrect = false;
-			}
+	public static boolean validationEnteredNumberForBuy(int number, Person salesman) { // TODO
+		boolean isCorrect = true;
+		if (number >= salesman.getProducts().length + OPERATION_EXIT) {
+			isCorrect = false;
 		}
 		if (isCorrect == false) {
 			System.out.println(YOU_ENTERED_INCORRECTLY);
 		}
 		if (isCorrect == true) {
-			isCorrect = checkStatusProduct(numberInt, salesman);
+			isCorrect = checkStatusProduct(number, salesman);
 		}
 		return isCorrect;
 	}

@@ -78,4 +78,8 @@ public class Payment {
 	private static void withdrawalReservesCustomer(Person customer) {
 		customer.setProducts(new Product[0]);
 	}
+	
+	private static void deleteReserveCustomer(Person customer) {
+		System.out.println("Do you want to delete a product from reserves customer? Yes - 0, No - 1");
+	}
 }
