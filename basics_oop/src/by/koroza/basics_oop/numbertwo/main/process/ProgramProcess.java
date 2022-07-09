@@ -9,7 +9,7 @@ public class ProgramProcess {
 	private static final String ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";
 	private static final String SPACE = " ";
 	private static final String EXIT = " - exit";
-	private static final String YOU_ENTERED_INCORRECTLY = "You entered incorrectly.";
+	private static final String MESSAGE_ERROW = "You entered incorrectly.";
 	private static final Boolean STATUS_RESERVED = false;
 
 	public static void programProcess() {
@@ -49,7 +49,7 @@ public class ProgramProcess {
 			if (scan.hasNextInt()) {
 				number = scan.nextInt();
 			} else {
-				System.out.println(YOU_ENTERED_INCORRECTLY);
+				System.out.println(MESSAGE_ERROW);
 			}
 		} while (Validation.validationEnteredNumberForBuy(number, salesman) == false);
 		return number;

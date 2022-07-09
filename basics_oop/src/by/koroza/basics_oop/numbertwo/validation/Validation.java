@@ -36,7 +36,7 @@ public class Validation {
 		return isCorrect;
 	}
 
-	public static boolean validationEnteredNumberForBuy(int number, Person salesman) { 
+	public static boolean validationEnteredNumberForBuy(int number, Person salesman) {
 		boolean isCorrect = true;
 		if (number >= salesman.getProducts().length + OPERATION_EXIT) {
 			isCorrect = false;
@@ -44,8 +44,16 @@ public class Validation {
 		if (isCorrect == false) {
 			System.out.println(MESSAGE_ERROW);
 		}
-		if (isCorrect == true && (number < salesman.getProducts().length)) {
+		if ((isCorrect == true) && (number < salesman.getProducts().length)) {
 			isCorrect = checkStatusProduct(number, salesman);
+		}
+		return isCorrect;
+	}
+
+	public static boolean validationEnteredNumberProductForDeletion(int number, Person custoner) {
+		boolean isCorrect = false;
+		if (number < custoner.getProducts().length + OPERATION_EXIT) {
+			isCorrect = true;
 		}
 		return isCorrect;
 	}

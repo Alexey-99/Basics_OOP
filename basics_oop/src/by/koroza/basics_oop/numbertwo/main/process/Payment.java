@@ -14,6 +14,8 @@ public class Payment {
 	private static final String SPACE = " ";
 	private static final String YES = "0";
 	private static final String NO = "1";
+	private static final String MESSAGE_ERROW = "You entered incorrectly.";
+	private static final String MESAGE_ENTER_NUMBER_DELESION_PRODUCT = "Enter the number of the product you want to delete.";
 
 	public static void payment(Person salesman, Person customer) {
 		BankAccount[] bankAccountsSalesman = salesman.getBankAccounts();
@@ -37,18 +39,20 @@ public class Payment {
 			if (customer.getBankAccounts()[0].getBalance() < sumPayment) {
 				String answer = enterAnswerOnReplemenishmentBankAccount(customer);
 				if (answer.equals(YES)) {
-
-				} else if (answer.equals(NO)) { // Do you want to delete a product from array customer?
-					deleteReserveCustomer(customer);
-					// withdrawalReserves(salesman, customer);
+					customer.getBankAccounts()[0]
+							.replenishmentBalance(sumPayment - customer.getBankAccounts()[0].getBalance());
+					transferringMoney(salesman, customer, sumPayment);
+				} else if (answer.equals(NO)) {
+					withdrawalReserves(salesman, customer);
 				}
+			} else {
+				transferringMoney(salesman, customer, sumPayment);
 			}
 		} else if (customer.getBankAccounts().length == 0) {
 			withdrawalReserves(salesman, customer);
 		}
 	}
 
-	@SuppressWarnings("resource")
 	private static String enterAnswerOnReplemenishmentBankAccount(Person customer) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(customer.getLastName()).append(SPACE);
@@ -81,10 +85,18 @@ public class Payment {
 		builder.append(customer.getLastName()).append(SPACE);
 		builder.append(customer.getFirstName()).append(SPACE);
 		builder.append(customer.getPatronymic()).append(SPACE);
-		System.out.println(DO_YOU_WANT_DELETE_PRODUCT_FROM_RESERVES);
+		builder.append(DO_YOU_WANT_DELETE_PRODUCT_FROM_RESERVES);
 		String answer = enterAnswerYesOrNo(builder);
-		if (answer == YES) {
-			printProducts(customer);
+		int number = 0;
+		if (answer.equals(YES)) {
+			do {
+				printProducts(customer);
+				number = enterNumberProductToDelete(customer);
+				if (number < customer.getProducts().length) {
+					customer.deleteProduct(customer.getProducts()[number]);
+				}
+			} while (number != customer.getProducts().length);
+
 		}
 	}
 
@@ -104,5 +116,30 @@ public class Payment {
 		if (customer.getProducts().length > 0) {
 			System.out.println(customer.getProducts().length + " - exit from deletion.");
 		}
+	}
+
+	private static void transferringMoney(Person salesman, Person customer, double sumPayment) {
+		customer.getBankAccounts()[0].setBalance(customer.getBankAccounts()[0].getBalance() - sumPayment);
+		salesman.getBankAccounts()[0].setBalance(salesman.getBankAccounts()[0].getBalance() + sumPayment);
+	}
+
+	@SuppressWarnings("resource")
+	private static int enterNumberProductToDelete(Person customer) {
+		StringBuilder builder = new StringBuilder();
+		builder.append(customer.getLastName()).append(SPACE);
+		builder.append(customer.getFirstName()).append(SPACE);
+		builder.append(customer.getPatronymic()).append(SPACE);
+		builder.append(MESAGE_ENTER_NUMBER_DELESION_PRODUCT);
+		int number = 0;
+		do {
+			System.out.println(builder);
+			Scanner scan = new Scanner(System.in);
+			if (scan.hasNextInt()) {
+				number = scan.nextInt();
+			} else {
+				System.out.println(MESSAGE_ERROW);
+			}
+		} while (Validation.validationEnteredNumberProductForDeletion(number, customer) == false);
+		return number;
 	}
 }

@@ -101,7 +101,7 @@ public class Product {
 		builder.append(PRODUCT_NAME).append(name).append(NEXT_LINE);
 		builder.append(PRODUCT_PRICE).append(price).append(NEXT_LINE);
 		if (status == false) {
-			builder.append(PRODUCT_RESERVED);
+			builder.append(PRODUCT_RESERVED).append(NEXT_LINE);
 		}
 		return builder.toString();
 	}
