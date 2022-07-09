@@ -7,10 +7,10 @@ public class Product {
 	private String name;
 	private double price;
 	private boolean status;
-	private static final String PRODUCT_NAME = "Product name: ";
-	private static final String PRODUCT_PRICE = "Product price: ";
+	private static final String LINE_PRODUCT_NAME = "Product name: ";
+	private static final String LINE_PRODUCT_PRICE = "Product price: ";
 	private static final String NEXT_LINE = "\n";
-	private static final String PRODUCT_RESERVED = "This product reserved.";
+	private static final String MESSAGE_PRODUCT_RESERVED = "This product reserved.";
 
 	public Product(String name, double price) {
 		this.id = count++;
@@ -60,10 +60,10 @@ public class Product {
 		result = result * prime + (name != null ? name.hashCode() : 1);
 		result = result * prime + Double.hashCode(price);
 		result = result * prime + Boolean.hashCode(status);
-		result = result * prime + (PRODUCT_NAME != null ? PRODUCT_NAME.hashCode() : 1);
-		result = result * prime + (PRODUCT_PRICE != null ? PRODUCT_PRICE.hashCode() : 1);
+		result = result * prime + (LINE_PRODUCT_NAME != null ? LINE_PRODUCT_NAME.hashCode() : 1);
+		result = result * prime + (LINE_PRODUCT_PRICE != null ? LINE_PRODUCT_PRICE.hashCode() : 1);
 		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
-		result = result * prime + (PRODUCT_RESERVED != null ? PRODUCT_RESERVED.hashCode() : 1);
+		result = result * prime + (MESSAGE_PRODUCT_RESERVED != null ? MESSAGE_PRODUCT_RESERVED.hashCode() : 1);
 		return result;
 	}
 
@@ -98,10 +98,10 @@ public class Product {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(PRODUCT_NAME).append(name).append(NEXT_LINE);
-		builder.append(PRODUCT_PRICE).append(price).append(NEXT_LINE);
+		builder.append(LINE_PRODUCT_NAME).append(name).append(NEXT_LINE);
+		builder.append(LINE_PRODUCT_PRICE).append(price).append(NEXT_LINE);
 		if (status == false) {
-			builder.append(PRODUCT_RESERVED).append(NEXT_LINE);
+			builder.append(MESSAGE_PRODUCT_RESERVED).append(NEXT_LINE);
 		}
 		return builder.toString();
 	}

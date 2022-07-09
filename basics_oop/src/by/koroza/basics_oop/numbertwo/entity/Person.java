@@ -9,7 +9,7 @@ public class Person {
 	private String patronymic;
 	private BankAccount bankAccount;
 	private Product[] products;
-	private static final String DOES_NOT_HAVE_PRODUCTS = "Doesn't have products for sale";
+	private static final String MESSAGE_DOES_NOT_HAVE_PRODUCTS = "Doesn't have products for sale";
 	private static final int ONE_ELEMENT = 1;
 
 	public Person(String lastName, String firstName, String patronymic) {
@@ -98,7 +98,7 @@ public class Person {
 				System.out.println(i + " - " + products[i].toString());
 			}
 		} else {
-			System.out.println(DOES_NOT_HAVE_PRODUCTS);
+			System.out.println(MESSAGE_DOES_NOT_HAVE_PRODUCTS);
 		}
 	}
 
@@ -113,7 +113,7 @@ public class Person {
 		result = result * prime + (patronymic != null ? patronymic.hashCode() : 1);
 		result = result * prime + (bankAccount != null ? bankAccount.hashCode() : 1);
 		result = result * prime + (products != null ? products.hashCode() : 1);
-		result = result * prime + (DOES_NOT_HAVE_PRODUCTS != null ? DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
+		result = result * prime + (MESSAGE_DOES_NOT_HAVE_PRODUCTS != null ? MESSAGE_DOES_NOT_HAVE_PRODUCTS.hashCode() : 1);
 		return result;
 	}
 

@@ -5,6 +5,9 @@ public class BankAccount {
 
 	private int number;
 	private double balance;
+	private static final String LINE_NUMBER_BANK_ACCOUNT = "Number bank account: ";
+	private static final String LINE_BALANCE = "Balance: ";
+	private static final String NEXT_LINE = "\n";
 
 	public BankAccount() {
 		this.number = count++;
@@ -43,6 +46,9 @@ public class BankAccount {
 		result = result * prime + count;
 		result = result * prime + number;
 		result = result * prime + Double.hashCode(balance);
+		result = result * prime + (LINE_BALANCE != null ? LINE_BALANCE.hashCode() : 1);
+		result = result * prime + (LINE_NUMBER_BANK_ACCOUNT != null ? LINE_NUMBER_BANK_ACCOUNT.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
 		return result;
 	}
 
@@ -68,9 +74,10 @@ public class BankAccount {
 	}
 
 	@Override
-	public String toString() { // TODO toString()
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append(LINE_NUMBER_BANK_ACCOUNT).append(number).append(NEXT_LINE);
+		builder.append(LINE_BALANCE).append(balance).append(NEXT_LINE);
 		return builder.toString();
 	}
-
 }
