@@ -20,21 +20,15 @@ public class CreationSalesmanAndCuctomer {
 	private static final String MESSAGE_ERROW = "You entered incorrectly.";
 
 	public static Person createSalesman() {
-		/*
-		 * Person salesman = new Person(enterLastName(WORD_SALESMAN),
-		 * enterFirstName(WORD_SALESMAN), enterPatronymic(WORD_SALESMAN));
-		 */
-		Person salesman = new Person("Ko", "Al", "Mi");
+		Person salesman = new Person(enterLastName(WORD_SALESMAN), enterFirstName(WORD_SALESMAN),
+				enterPatronymic(WORD_SALESMAN));
 		addProduct(salesman);
 		return salesman;
 	}
 
 	public static Person createCustomer() {
-		/*
-		 * Person customer = new Person(enterLastName(WORD_CUSTOMER),
-		 * enterFirstName(WORD_CUSTOMER), enterPatronymic(WORD_CUSTOMER));
-		 */
-		Person customer = new Person("Koroza", "Alexey", "Mikhailovich");
+		Person customer = new Person(enterLastName(WORD_CUSTOMER), enterFirstName(WORD_CUSTOMER),
+				enterPatronymic(WORD_CUSTOMER));
 		return customer;
 	}
 

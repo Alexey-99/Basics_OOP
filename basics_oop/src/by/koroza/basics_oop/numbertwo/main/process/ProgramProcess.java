@@ -6,16 +6,17 @@ import by.koroza.basics_oop.numbertwo.entity.Person;
 import by.koroza.basics_oop.numbertwo.validation.Validation;
 
 public class ProgramProcess {
-	private static final String ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";
+	private static final String MASSEGE_ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";
 	private static final String SPACE = " ";
-	private static final String EXIT = " - exit";
+	private static final String OPERATION_EXIT = " - exit";
 	private static final String MESSAGE_ERROW = "You entered incorrectly.";
-	private static final Boolean STATUS_RESERVED = false;
+	private static final String MESSAGE_LIST_PRODUCT_FOR_BUY = "The list of goods that can be bought";
+	private static final boolean STATUS_RESERVED = false;
 
 	public static void programProcess() {
 		Person salesman = createSalesman();
 		Person customer = createCustomer();
-		System.out.println("The list of goods that can be bought");
+		System.out.println(MESSAGE_LIST_PRODUCT_FOR_BUY);
 		selectionProductsForBuy(salesman, customer);
 		Payment.payment(salesman, customer);
 	}
@@ -32,7 +33,7 @@ public class ProgramProcess {
 
 	private static void printProductsSalesman(Person salesman) {
 		salesman.printProducts();
-		System.out.println(salesman.getProducts().length + EXIT);
+		System.out.println(salesman.getProducts().length + OPERATION_EXIT);
 	}
 
 	@SuppressWarnings("resource")
@@ -42,7 +43,7 @@ public class ProgramProcess {
 		builder.append(customer.getLastName()).append(SPACE);
 		builder.append(customer.getFirstName()).append(SPACE);
 		builder.append(customer.getPatronymic()).append(SPACE);
-		builder.append(ENTER_PRODUCT_NUMBER);
+		builder.append(MASSEGE_ENTER_PRODUCT_NUMBER);
 		System.out.println(builder);
 		do {
 			Scanner scan = new Scanner(System.in);
