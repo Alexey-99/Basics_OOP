@@ -8,13 +8,14 @@ import by.koroza.basics_oop.numbertwo.validation.Validation;
 public class ProgramProcess {
 	private static final String ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";
 	private static final String SPACE = " ";
-	private static final String EXIT = "exit";
+	private static final String EXIT = " - exit";
 	private static final String YOU_ENTERED_INCORRECTLY = "You entered incorrectly.";
 	private static final Boolean STATUS_RESERVED = false;
 
 	public static void programProcess() {
 		Person salesman = createSalesman();
 		Person customer = createCustomer();
+		System.out.println("The list of goods that can be bought");
 		selectionProductsForBuy(salesman, customer);
 		Payment.payment(salesman, customer);
 	}

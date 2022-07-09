@@ -10,6 +10,7 @@ import by.koroza.basics_oop.numbertwo.validation.Validation;
 public class Payment {
 	private static final String DOES_NOT_MONEY_IN_BANK_ACCOUNT = "you doesn't have enough moneyin your bank account. ";
 	private static final String WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT = "Would you want to top up your account? Enter Yes - 0, No - 1";
+	private static final String DO_YOU_WANT_DELETE_PRODUCT_FROM_RESERVES = "Do you want to delete a product from reserves customer? Yes - 0, No - 1";
 	private static final String SPACE = " ";
 	private static final String YES = "0";
 	private static final String NO = "1";
@@ -38,7 +39,8 @@ public class Payment {
 				if (answer.equals(YES)) {
 
 				} else if (answer.equals(NO)) { // Do you want to delete a product from array customer?
-					//withdrawalReserves(salesman, customer);
+					deleteReserveCustomer(customer);
+					// withdrawalReserves(salesman, customer);
 				}
 			}
 		} else if (customer.getBankAccounts().length == 0) {
@@ -53,12 +55,7 @@ public class Payment {
 		builder.append(customer.getFirstName()).append(SPACE);
 		builder.append(customer.getPatronymic()).append(SPACE);
 		builder.append(DOES_NOT_MONEY_IN_BANK_ACCOUNT).append(SPACE).append(WOULD_YOU_WANT_TOP_UP_YOUR_ACCOUNT);
-		Scanner scan = new Scanner(System.in);
-		String answer = "";
-		System.out.println(builder);
-		do {
-			answer = scan.nextLine();
-		} while (Validation.validationAnswerZeroOrOne(answer) == false);
+		String answer = enterAnswerYesOrNo(builder);
 		return answer;
 	}
 
@@ -78,8 +75,34 @@ public class Payment {
 	private static void withdrawalReservesCustomer(Person customer) {
 		customer.setProducts(new Product[0]);
 	}
-	
+
 	private static void deleteReserveCustomer(Person customer) {
-		System.out.println("Do you want to delete a product from reserves customer? Yes - 0, No - 1");
+		StringBuilder builder = new StringBuilder();
+		builder.append(customer.getLastName()).append(SPACE);
+		builder.append(customer.getFirstName()).append(SPACE);
+		builder.append(customer.getPatronymic()).append(SPACE);
+		System.out.println(DO_YOU_WANT_DELETE_PRODUCT_FROM_RESERVES);
+		String answer = enterAnswerYesOrNo(builder);
+		if (answer == YES) {
+			printProducts(customer);
+		}
+	}
+
+	@SuppressWarnings("resource")
+	private static String enterAnswerYesOrNo(StringBuilder builder) {
+		Scanner scan = new Scanner(System.in);
+		String answer = "";
+		System.out.println(builder);
+		do {
+			answer = scan.nextLine();
+		} while (Validation.validationAnswerZeroOrOne(answer) == false);
+		return answer;
+	}
+
+	private static void printProducts(Person customer) {
+		customer.printProducts();
+		if (customer.getProducts().length > 0) {
+			System.out.println(customer.getProducts().length + " - exit from deletion.");
+		}
 	}
 }

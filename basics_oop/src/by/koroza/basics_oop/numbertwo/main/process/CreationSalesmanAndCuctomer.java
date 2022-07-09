@@ -7,25 +7,28 @@ import by.koroza.basics_oop.numbertwo.entity.Product;
 import by.koroza.basics_oop.numbertwo.validation.Validation;
 
 public class CreationSalesmanAndCuctomer {
-	private static final String ENTER_LAST_NAME = " enter last name (Example: Koroza)";
-	private static final String ENTER_FIRST_NAME = " enter first name (Example: Alexey)";
-	private static final String ENTER_PATRONYMIC = " enter patronymic (Example: Mikhailovich)";
-	private static final String DO_YOU_WANT_ADD_PRODUCT = "do you want to add a product? Enter Yes - 0, No - 1 ";
+	private static final String MESSAGE_ENTER_LAST_NAME = " enter last name (Example: Koroza)";
+	private static final String MESSAGE_ENTER_FIRST_NAME = " enter first name (Example: Alexey)";
+	private static final String MESSAGE_ENTER_PATRONYMIC = " enter patronymic (Example: Mikhailovich)";
+	private static final String MESSAGE_DO_YOU_WANT_ADD_PRODUCT = "do you want to add a product? Enter Yes - 0, No - 1 ";
 	private static final String SPACE = " ";
-	private static final String YES = "0";
-	private static final String ENTER_PRODUCT_NAME = "Enter product name.";
-	private static final String ENTER_PRODUCT_PRICE = "Enter product price.";
-	private static final String SALESMAN = "Salesman";
-	private static final String CUSTOMER = "Customer";
+	private static final String CODE_YES = "0";
+	private static final String MESSAGE_ENTER_PRODUCT_NAME = "Enter product name.";
+	private static final String MESSAGE_ENTER_PRODUCT_PRICE = "Enter product price.";
+	private static final String WORD_SALESMAN = "Salesman";
+	private static final String WORD_CUSTOMER = "Customer";
+	private static final String MESSAGE_ERROW = "You entered incorrectly.";
 
 	public static Person createSalesman() {
-		Person salesman = new Person(enterLastName(SALESMAN), enterFirstName(SALESMAN), enterPatronymic(SALESMAN));
+		Person salesman = new Person(enterLastName(WORD_SALESMAN), enterFirstName(WORD_SALESMAN),
+				enterPatronymic(WORD_SALESMAN));
 		addProduct(salesman);
 		return salesman;
 	}
 
 	public static Person createCustomer() {
-		Person customer = new Person(enterLastName(CUSTOMER), enterFirstName(CUSTOMER), enterPatronymic(CUSTOMER));
+		Person customer = new Person(enterLastName(WORD_CUSTOMER), enterFirstName(WORD_CUSTOMER),
+				enterPatronymic(WORD_CUSTOMER));
 		return customer;
 	}
 
@@ -34,7 +37,7 @@ public class CreationSalesmanAndCuctomer {
 		Scanner scan = new Scanner(System.in);
 		String lastName = "";
 		do {
-			System.out.println(person + ENTER_LAST_NAME);
+			System.out.println(person + MESSAGE_ENTER_LAST_NAME);
 			lastName = scan.nextLine();
 		} while (Validation.validationPersonName(lastName) == false);
 		return lastName;
@@ -45,7 +48,7 @@ public class CreationSalesmanAndCuctomer {
 		Scanner scan = new Scanner(System.in);
 		String firstName = "";
 		do {
-			System.out.println(person + ENTER_FIRST_NAME);
+			System.out.println(person + MESSAGE_ENTER_FIRST_NAME);
 			firstName = scan.nextLine();
 		} while (Validation.validationPersonName(firstName) == false);
 		return firstName;
@@ -56,7 +59,7 @@ public class CreationSalesmanAndCuctomer {
 		Scanner scan = new Scanner(System.in);
 		String patronymic = "";
 		do {
-			System.out.println(person + ENTER_PATRONYMIC);
+			System.out.println(person + MESSAGE_ENTER_PATRONYMIC);
 			patronymic = scan.nextLine();
 		} while (Validation.validationPersonName(patronymic) == false);
 		return patronymic;
@@ -66,10 +69,10 @@ public class CreationSalesmanAndCuctomer {
 		String answer = "";
 		do {
 			answer = productAdditionConfirmation(person);
-			if (answer.equals(YES)) {
+			if (answer.equals(CODE_YES)) {
 				person.addProduct(createProduct());
 			}
-		} while (answer.equals(YES));
+		} while (answer.equals(CODE_YES));
 
 	}
 
@@ -79,7 +82,7 @@ public class CreationSalesmanAndCuctomer {
 		builder.append(person.getLastName()).append(SPACE);
 		builder.append(person.getFirstName()).append(SPACE);
 		builder.append(person.getPatronymic()).append(SPACE);
-		builder.append(DO_YOU_WANT_ADD_PRODUCT);
+		builder.append(MESSAGE_DO_YOU_WANT_ADD_PRODUCT);
 		Scanner scan = new Scanner(System.in);
 		String answer = "";
 		System.out.println(builder);
@@ -98,7 +101,7 @@ public class CreationSalesmanAndCuctomer {
 	private static String enterProductName() {
 		Scanner scan = new Scanner(System.in);
 		String name = "";
-		System.out.println(ENTER_PRODUCT_NAME);
+		System.out.println(MESSAGE_ENTER_PRODUCT_NAME);
 		do {
 			name = scan.nextLine();
 		} while (Validation.validationProductName(name) == false);
@@ -107,13 +110,18 @@ public class CreationSalesmanAndCuctomer {
 
 	@SuppressWarnings("resource")
 	private static double enterProductPrice() {
-		Scanner scan = new Scanner(System.in);
-		String priceStr = "";
-		System.out.println(ENTER_PRODUCT_PRICE);
+		double price = 0;
+		boolean isEnterCorrect = false;
+		System.out.println(MESSAGE_ENTER_PRODUCT_PRICE);
 		do {
-			priceStr = scan.nextLine();
-		} while (Validation.validationProductPrice(priceStr) == false);
-		double price = Double.parseDouble(priceStr);
+			Scanner scan = new Scanner(System.in);
+			if (scan.hasNextDouble()) {
+				price = scan.nextDouble();
+				isEnterCorrect = true;
+			} else {
+				System.out.println(MESSAGE_ERROW);
+			}
+		} while (isEnterCorrect == false);
 		return price;
 	}
 }
