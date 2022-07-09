@@ -129,7 +129,6 @@ public class Person {
 		result = result * prime + (LINE_PATRONYMIC != null ? LINE_PATRONYMIC.hashCode() : 1);
 		result = result * prime + (LINE_BANK_ACCOUNT != null ? LINE_BANK_ACCOUNT.hashCode() : 1);
 		result = result * prime + (LINE_PRODUCTS != null ? LINE_PRODUCTS.hashCode() : 1);
-
 		return result;
 	}
 
