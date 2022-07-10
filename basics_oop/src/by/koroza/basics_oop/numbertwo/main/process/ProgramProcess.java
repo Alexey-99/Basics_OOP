@@ -40,9 +40,7 @@ public class ProgramProcess {
 	private static int enterNumberProductForBuy(Person salesman, Person customer) {
 		int number = 0;
 		StringBuilder builder = new StringBuilder();
-		builder.append(customer.getLastName()).append(SPACE);
-		builder.append(customer.getFirstName()).append(SPACE);
-		builder.append(customer.getPatronymic()).append(SPACE);
+		builder.append(customer.lastFirstNamePatronymic()).append(SPACE);
 		builder.append(MASSEGE_ENTER_PRODUCT_NUMBER);
 		System.out.println(builder);
 		do {

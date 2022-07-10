@@ -79,9 +79,7 @@ public class CreationSalesmanAndCuctomer {
 	@SuppressWarnings("resource")
 	private static String productAdditionConfirmation(Person person) {
 		StringBuilder builder = new StringBuilder();
-		builder.append(person.getLastName()).append(LINE_SPACE);
-		builder.append(person.getFirstName()).append(LINE_SPACE);
-		builder.append(person.getPatronymic()).append(LINE_SPACE);
+		builder.append(person.lastFirstNamePatronymic()).append(LINE_SPACE);
 		builder.append(MESSAGE_DO_YOU_WANT_ADD_PRODUCT);
 		Scanner scan = new Scanner(System.in);
 		String answer = "";

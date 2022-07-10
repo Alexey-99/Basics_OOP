@@ -18,6 +18,7 @@ public class Person {
 	private static final String LINE_PATRONYMIC = "Patronymic: ";
 	private static final String LINE_BANK_ACCOUNT = "Bank account: ";
 	private static final String LINE_PRODUCTS = "Products: ";
+	private static final String SPACE = " ";
 
 	public Person(String lastName, String firstName, String patronymic) {
 		this.id = count++;
@@ -109,6 +110,14 @@ public class Person {
 		}
 	}
 
+	public String lastFirstNamePatronymic() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(lastName).append(SPACE);
+		builder.append(firstName).append(SPACE);
+		builder.append(patronymic);
+		return builder.toString();
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
@@ -129,6 +138,7 @@ public class Person {
 		result = result * prime + (LINE_PATRONYMIC != null ? LINE_PATRONYMIC.hashCode() : 1);
 		result = result * prime + (LINE_BANK_ACCOUNT != null ? LINE_BANK_ACCOUNT.hashCode() : 1);
 		result = result * prime + (LINE_PRODUCTS != null ? LINE_PRODUCTS.hashCode() : 1);
+		result = result * prime + (SPACE != null ? SPACE.hashCode() : 1);
 		return result;
 	}
 
