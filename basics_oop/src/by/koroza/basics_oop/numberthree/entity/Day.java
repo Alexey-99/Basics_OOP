@@ -4,11 +4,27 @@ public class Day {
 	private int number;
 	private boolean weekend;
 	private boolean holiday;
+	private static final String LINE_NUMBER = "Number: ";
+	private static final String NEXT_LINE = "\n";
+	private static final String LINE_WEEKEND = "This day is weekend.";
+	private static final String LINE_HOLIDAY = "This day is holiday.";
 
 	public Day(int number, boolean weekend, boolean holiday) {
 		this.number = number;
 		this.weekend = weekend;
 		this.holiday = holiday;
+	}
+
+	public Day(int number, boolean weekend) {
+		this.number = number;
+		this.weekend = weekend;
+		this.holiday = false;
+	}
+
+	public Day(int number) {
+		this.number = number;
+		this.weekend = false;
+		this.holiday = false;
 	}
 
 	public int getNumber() {
@@ -42,6 +58,9 @@ public class Day {
 		result = result * prime + number;
 		result = result * prime + Boolean.hashCode(weekend);
 		result = result * prime + Boolean.hashCode(holiday);
+		result = result * prime + (LINE_NUMBER != null ? LINE_NUMBER.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
+		result = result * prime + (LINE_WEEKEND != null ? LINE_WEEKEND.hashCode() : 1);
 		return result;
 	}
 
@@ -70,8 +89,15 @@ public class Day {
 	}
 
 	@Override
-	public String toString() { // TODO toString()
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append(LINE_NUMBER).append(number).append(NEXT_LINE);
+		if (weekend == true) {
+			builder.append(LINE_WEEKEND).append(NEXT_LINE);
+		}
+		if (holiday == true) {
+			builder.append(LINE_HOLIDAY).append(NEXT_LINE);
+		}
 		return builder.toString();
 	}
 }
