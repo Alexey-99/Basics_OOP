@@ -25,6 +25,10 @@ public class Month {
 		this.days = days;
 	}
 
+	public void addDay(Day day) { // TODO addDay(Day day)
+
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
@@ -64,7 +68,7 @@ public class Month {
 	}
 
 	@Override
-	public String toString() { //TODO toString()
+	public String toString() { // TODO toString()
 		StringBuilder builder = new StringBuilder();
 		return builder.toString();
 	}

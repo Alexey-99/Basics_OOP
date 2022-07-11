@@ -15,6 +15,10 @@ public class Сalendar {
 		this.years = years;
 	}
 
+	public void addYear(Year year) { // TODO addYear(Year year)
+
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;

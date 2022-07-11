@@ -25,6 +25,10 @@ public class Year {
 		this.month = month;
 	}
 
+	public void addMonth(Month month) { // TODO addMonth(Month month)
+
+	}
+
 	@Override
 	public int hashCode() {
 		int result = 31;
