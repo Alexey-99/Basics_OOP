@@ -61,6 +61,7 @@ public class Day {
 		result = result * prime + (LINE_NUMBER != null ? LINE_NUMBER.hashCode() : 1);
 		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
 		result = result * prime + (LINE_WEEKEND != null ? LINE_WEEKEND.hashCode() : 1);
+		result = result * prime + (LINE_HOLIDAY != null ? LINE_HOLIDAY.hashCode() : 1);
 		return result;
 	}
 
