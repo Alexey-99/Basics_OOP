@@ -25,4 +25,43 @@ public class Year {
 		this.month = month;
 	}
 
+	@Override
+	public int hashCode() {
+		int result = 31;
+		int prime = 1;
+		result = result * prime + number;
+		result = result * prime + (month != null ? month.hashCode() : 1);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		if (this == object) {
+			return true;
+		}
+		if (object == null) {
+			return false;
+		}
+		if (!getClass().equals(object.getClass())) {
+			return false;
+		}
+		Year year = (Year) object;
+		if (number != year.number) {
+			return false;
+		}
+		if (month == null) {
+			if (year.month != null) {
+				return false;
+			}
+		} else if (!month.equals(year.month)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() { // TODO toString()
+		StringBuilder builder = new StringBuilder();
+		return builder.toString();
+	}
 }

@@ -15,4 +15,39 @@ public class Сalendar {
 		this.years = years;
 	}
 
+	@Override
+	public int hashCode() {
+		int result = 31;
+		int prime = 1;
+		result = result * prime + (years != null ? years.hashCode() : 1);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		if (this == object) {
+			return true;
+		}
+		if (object == null) {
+			return false;
+		}
+		if (!getClass().equals(object.getClass())) {
+			return false;
+		}
+		Сalendar сalendar = (Сalendar) object;
+		if (years == null) {
+			if (сalendar.years != null) {
+				return false;
+			}
+		} else if (!years.equals(сalendar.years)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() { // TODO toString()
+		StringBuilder builder = new StringBuilder();
+		return builder.toString();
+	}
 }
