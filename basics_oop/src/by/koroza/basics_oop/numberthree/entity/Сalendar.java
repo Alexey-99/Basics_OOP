@@ -7,6 +7,10 @@ public class Сalendar {
 		this.years = new Year[0];
 	}
 
+	public Сalendar(Year[] years) {
+		this.years = years;
+	}
+
 	public Year[] getYears() {
 		return years;
 	}
