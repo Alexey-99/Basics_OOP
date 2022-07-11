@@ -9,6 +9,11 @@ public class Month {
 		this.days = new Day[0];
 	}
 
+	public Month(String name, Day[] days) {
+		this.name = name;
+		this.days = days;
+	}
+
 	public String getName() {
 		return name;
 	}

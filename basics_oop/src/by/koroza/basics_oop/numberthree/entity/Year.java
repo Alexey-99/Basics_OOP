@@ -9,6 +9,11 @@ public class Year {
 		this.month = new Month[0];
 	}
 
+	public Year(int number, Month[] month) {
+		this.number = number;
+		this.month = month;
+	}
+
 	public int getNumber() {
 		return number;
 	}
