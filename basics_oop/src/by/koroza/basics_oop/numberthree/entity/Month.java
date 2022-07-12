@@ -4,6 +4,8 @@ public class Month {
 	private String name;
 	private Day[] days;
 
+	private static final String NEXT_LINE = "\n";
+
 	public Month(String name) {
 		this.name = name;
 		this.days = new Day[0];
@@ -40,6 +42,7 @@ public class Month {
 		int prime = 1;
 		result = result * prime + (name != null ? name.hashCode() : 1);
 		result = result * prime + (days != null ? days.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
 		return result;
 	}
 
@@ -73,8 +76,12 @@ public class Month {
 	}
 
 	@Override
-	public String toString() { // TODO toString()
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append(name).append(NEXT_LINE);
+		for (Day day : days) {
+			builder.append(day.toString()).append(NEXT_LINE);
+		}
 		return builder.toString();
 	}
 }

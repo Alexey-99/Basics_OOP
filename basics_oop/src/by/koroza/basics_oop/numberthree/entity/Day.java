@@ -4,6 +4,7 @@ public class Day {
 	private int number;
 	private boolean weekend;
 	private boolean holiday;
+	private int dayOfWeek;
 	private static final String LINE_NUMBER = "Number: ";
 	private static final String NEXT_LINE = "\n";
 	private static final String LINE_WEEKEND = "This day is weekend.";
@@ -35,20 +36,28 @@ public class Day {
 		this.number = number;
 	}
 
-	public boolean isHoliday() {
+	public boolean getIsHoliday() {
 		return holiday;
 	}
 
-	public void setHoliday(boolean holiday) {
+	public void setIsHoliday(boolean holiday) {
 		this.holiday = holiday;
 	}
 
-	public boolean isWeekend() {
+	public boolean getIsWeekend() {
 		return weekend;
 	}
 
-	public void setWeekend(boolean weekend) {
+	public void setIsWeekend(boolean weekend) {
 		this.weekend = weekend;
+	}
+	
+	public int getDayOfWeek() {
+		return dayOfWeek;
+	}
+
+	public void setDayOfWeek(int dayOfWeek) {
+		this.dayOfWeek = dayOfWeek;
 	}
 
 	@Override

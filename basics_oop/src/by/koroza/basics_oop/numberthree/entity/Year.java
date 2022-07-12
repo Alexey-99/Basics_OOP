@@ -2,16 +2,23 @@ package by.koroza.basics_oop.numberthree.entity;
 
 public class Year {
 	private int number;
-	private Month[] month;
+	private Month[] months;
+	private static final String NEXT_LINE = "\n";
 
 	public Year(int number) {
 		this.number = number;
-		this.month = new Month[0];
+		this.months = new Month[0];
 	}
 
-	public Year(int number, Month[] month) {
+	public Year(int number, Month[] months) {
 		this.number = number;
-		this.month = month;
+		this.months = months;
+	}
+
+	public Year(int number, Month month) {
+		this.number = number;
+		this.months = new Month[1];
+		this.months[0] = month;
 	}
 
 	public int getNumber() {
@@ -22,12 +29,12 @@ public class Year {
 		this.number = number;
 	}
 
-	public Month[] getMonth() {
-		return month;
+	public Month[] getMonths() {
+		return months;
 	}
 
-	public void setMonth(Month[] month) {
-		this.month = month;
+	public void setMonths(Month[] months) {
+		this.months = months;
 	}
 
 	public void addMonth(Month month) { // TODO addMonth(Month month)
@@ -39,7 +46,8 @@ public class Year {
 		int result = 31;
 		int prime = 1;
 		result = result * prime + number;
-		result = result * prime + (month != null ? month.hashCode() : 1);
+		result = result * prime + (months != null ? months.hashCode() : 1);
+		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
 		return result;
 	}
 
@@ -58,11 +66,11 @@ public class Year {
 		if (number != year.number) {
 			return false;
 		}
-		if (month == null) {
-			if (year.month != null) {
+		if (months == null) {
+			if (year.months != null) {
 				return false;
 			}
-		} else if (!month.equals(year.month)) {
+		} else if (!months.equals(year.months)) {
 			return false;
 		}
 		return true;
@@ -71,6 +79,9 @@ public class Year {
 	@Override
 	public String toString() { // TODO toString()
 		StringBuilder builder = new StringBuilder();
+		for (Month month : months) {
+			builder.append(month.toString()).append(NEXT_LINE);
+		}
 		return builder.toString();
 	}
 }
