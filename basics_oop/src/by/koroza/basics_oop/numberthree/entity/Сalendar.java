@@ -61,7 +61,7 @@ public class Сalendar {
 	}
 
 	@Override
-	public String toString() { // TODO toString()
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		for (Year year : years) {
 			builder.append(year.toString()).append(NEXT_LINE);

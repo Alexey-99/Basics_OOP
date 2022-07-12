@@ -80,7 +80,7 @@ public class Month {
 		StringBuilder builder = new StringBuilder();
 		builder.append(name).append(NEXT_LINE);
 		for (Day day : days) {
-			builder.append(day.toString()).append(NEXT_LINE);
+			builder.append(day.toString());
 		}
 		return builder.toString();
 	}

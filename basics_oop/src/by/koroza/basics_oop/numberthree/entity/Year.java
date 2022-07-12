@@ -77,8 +77,9 @@ public class Year {
 	}
 
 	@Override
-	public String toString() { // TODO toString()
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append(number).append(NEXT_LINE);
 		for (Month month : months) {
 			builder.append(month.toString()).append(NEXT_LINE);
 		}
