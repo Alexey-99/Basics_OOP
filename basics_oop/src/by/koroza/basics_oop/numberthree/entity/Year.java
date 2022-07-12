@@ -4,6 +4,7 @@ public class Year {
 	private int number;
 	private Month[] months;
 	private static final String NEXT_LINE = "\n";
+	private static final int ONE_ELEMENT = 1;
 
 	public Year(int number) {
 		this.number = number;
@@ -37,8 +38,16 @@ public class Year {
 		this.months = months;
 	}
 
-	public void addMonth(Month month) { // TODO addMonth(Month month)
-
+	public void addMonth(Month month) {
+		Month[] monthsNew = new Month[this.months.length + ONE_ELEMENT];
+		for (int i = 0; i < monthsNew.length; i++) {
+			if (i < this.months.length) {
+				monthsNew[i] = this.months[i];
+			} else if (i == this.months.length) {
+				monthsNew[i] = month;
+			}
+		}
+		this.months = monthsNew;
 	}
 
 	@Override

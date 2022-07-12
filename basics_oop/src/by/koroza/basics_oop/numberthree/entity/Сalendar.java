@@ -3,6 +3,7 @@ package by.koroza.basics_oop.numberthree.entity;
 public class Сalendar {
 	private Year[] years;
 	private static final String NEXT_LINE = "\n";
+	private static final int ONE_ELEMENT = 1;
 
 	public Сalendar() {
 		this.years = new Year[0];
@@ -25,8 +26,16 @@ public class Сalendar {
 		this.years = years;
 	}
 
-	public void addYear(Year year) { // TODO addYear(Year year)
-
+	public void addYear(Year year) {
+		Year[] yearsNew = new Year[this.years.length + ONE_ELEMENT];
+		for (int i = 0; i < yearsNew.length; i++) {
+			if (i < this.years.length) {
+				yearsNew[i] = this.years[i];
+			} else if (i == this.years.length) {
+				yearsNew[i] = year;
+			}
+		}
+		this.years = yearsNew;
 	}
 
 	@Override
@@ -35,6 +44,7 @@ public class Сalendar {
 		int prime = 1;
 		result = result * prime + (years != null ? years.hashCode() : 1);
 		result = result * prime + (NEXT_LINE != null ? NEXT_LINE.hashCode() : 1);
+		result = result * prime + ONE_ELEMENT;
 		return result;
 	}
 
