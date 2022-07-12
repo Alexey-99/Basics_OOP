@@ -19,6 +19,5 @@ public class Main {
 		Month[] months = { jule, june };
 		Сalendar calendar = new Сalendar(new Year(2022, months));
 		System.out.println(calendar.toString());
-
 	}
 }
