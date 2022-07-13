@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.MonthDay;
 
-public class Test {
+public class Main {
 
 	public static void main(String[] args) {
-		TestCal calendar = new TestCal();
+		Calendar calendar = new Calendar();
 		calendar.addHoliday(MonthDay.of(Month.MAY, 1));
 		calendar.addHoliday(MonthDay.of(Month.MAY, 9));
 		calendar.addHoliday(MonthDay.of(Month.MARCH, 8));

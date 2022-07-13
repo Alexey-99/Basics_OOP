@@ -6,11 +6,11 @@ import java.time.MonthDay;
 import java.util.HashSet;
 import java.util.Set;
 
-public class TestCal {
+public class Calendar {
 	private final Set<MonthDay> holidays = new HashSet<>();
 	CustomHolidays customHolidays;
 
-	public TestCal() {
+	public Calendar() {
 		this.customHolidays = new CustomHolidays();
 	}
 
