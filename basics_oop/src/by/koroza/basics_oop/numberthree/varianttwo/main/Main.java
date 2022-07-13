@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.MonthDay;
 
+import by.koroza.basics_oop.numberthree.varianttwo.entity.Calendar;
+
 public class Main {
 
 	public static void main(String[] args) {
