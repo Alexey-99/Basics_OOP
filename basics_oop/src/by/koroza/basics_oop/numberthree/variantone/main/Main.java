@@ -2,12 +2,12 @@
  * с помощью объектов которого можно хранить информацию о выходных и праздничных днях.
  * */
 
-package by.koroza.basics_oop.numberthree.main;
+package by.koroza.basics_oop.numberthree.variantone.main;
 
-import by.koroza.basics_oop.numberthree.entity.Сalendar;
-import by.koroza.basics_oop.numberthree.entity.Day;
-import by.koroza.basics_oop.numberthree.entity.Month;
-import by.koroza.basics_oop.numberthree.entity.Year;
+import by.koroza.basics_oop.numberthree.variantone.entity.Day;
+import by.koroza.basics_oop.numberthree.variantone.entity.Month;
+import by.koroza.basics_oop.numberthree.variantone.entity.Year;
+import by.koroza.basics_oop.numberthree.variantone.entity.Сalendar;
 
 public class Main {
 

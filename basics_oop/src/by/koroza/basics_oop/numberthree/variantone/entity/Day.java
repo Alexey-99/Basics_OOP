@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberthree.entity;
+package by.koroza.basics_oop.numberthree.variantone.entity;
 
 public class Day {
 	private int number;
