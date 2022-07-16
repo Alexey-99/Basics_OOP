@@ -52,6 +52,5 @@ public class Calendar {
 		public MonthDay toMonthDay(final LocalDate localDate) {
 			return MonthDay.of(localDate.getMonth(), localDate.getDayOfMonth());
 		}
-
 	}
 }
