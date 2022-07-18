@@ -4,7 +4,7 @@
 
 package by.koroza.basics_oop.numbertwo.variantone.main;
 
-import by.koroza.basics_oop.numbertwo.main.process.ProgramProcess;
+import by.koroza.basics_oop.numbertwo.variantone.main.process.ProgramProcess;
 
 public class Main {
 
