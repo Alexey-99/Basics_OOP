@@ -2,9 +2,9 @@ package by.koroza.basics_oop.numbertwo.main.process;
 
 import java.util.Scanner;
 
-import by.koroza.basics_oop.numbertwo.entity.Person;
-import by.koroza.basics_oop.numbertwo.entity.Product;
 import by.koroza.basics_oop.numbertwo.validation.Validation;
+import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
+import by.koroza.basics_oop.numbertwo.variantone.entity.Product;
 
 public class CreationSalesmanAndCuctomer {
 	private static final String MESSAGE_ENTER_LAST_NAME = " enter last name (Example: Koroza)";

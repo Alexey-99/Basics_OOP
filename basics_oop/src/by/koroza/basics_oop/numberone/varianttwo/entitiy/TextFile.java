@@ -46,7 +46,7 @@ public class TextFile {
 //	            for (java.io.File dir : directoire.listFiles()){
 //	                if (dir.isDirectory()){
 //	                    System.out.println(dir.getName() + "  \t folder");
-//	                }else{
+//	                } else{
 //	                    System.out.println(dir.getName() + "\t file");
 //	                }
 //	            }

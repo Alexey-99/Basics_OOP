@@ -2,7 +2,7 @@
  * с помощью объектов которого можно сформировать покупку из нескольких товаров.
  * */
 
-package by.koroza.basics_oop.numbertwo.main;
+package by.koroza.basics_oop.numbertwo.variantone.main;
 
 import by.koroza.basics_oop.numbertwo.main.process.ProgramProcess;
 
