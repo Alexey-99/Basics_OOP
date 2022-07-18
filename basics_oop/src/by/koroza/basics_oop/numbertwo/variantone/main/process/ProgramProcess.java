@@ -1,6 +1,9 @@
 package by.koroza.basics_oop.numbertwo.variantone.main.process;
 
 import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
+import by.koroza.basics_oop.numbertwo.variantone.main.process.operations.CreationSalesmanAndCuctomer;
+import by.koroza.basics_oop.numbertwo.variantone.main.process.operations.Payment;
+import by.koroza.basics_oop.numbertwo.variantone.main.process.operations.SelectionProductsForBuy;
 
 public class ProgramProcess {
 	// private static final String MASSEGE_ENTER_PRODUCT_NUMBER = "enter the product

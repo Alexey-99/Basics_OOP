@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numbertwo.variantone.main.process;
+package by.koroza.basics_oop.numbertwo.variantone.main.process.operations;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class SelectionProductsForBuy {
 	private static final String SPACE = " ";
 	private static final String MASSEGE_ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";
 	private static final String MESSAGE_ERROW = "You entered incorrectly.";
-	
+
 	public static void selectionProductsForBuy(Person salesman, Person customer) {
 		int numberProduct = 0;
 		do {
@@ -23,12 +23,12 @@ public class SelectionProductsForBuy {
 			}
 		} while (numberProduct < salesman.getProducts().length);
 	}
-	
+
 	private static void printProductsSalesman(Person salesman) {
 		salesman.printProducts();
 		System.out.println(salesman.getProducts().length + OPERATION_EXIT);
 	}
-	
+
 	@SuppressWarnings("resource")
 	private static int enterNumberProductForBuy(Person salesman, Person customer) {
 		int number = 0;
