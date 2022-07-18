@@ -9,7 +9,7 @@ import by.koroza.basics_oop.numberone.varianttwo.entitiy.TextFile;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Directoire directoire = new Directoire("src/resources/text/text2");
+		Directoire directoire = new Directoire("basics_oop/resources/text");
 		File file = new File(directoire, "text2.txt");
 
 		TextFile textFile = new TextFile(directoire, file);
