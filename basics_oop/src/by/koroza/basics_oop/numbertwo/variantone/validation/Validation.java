@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numbertwo.validation;
+package by.koroza.basics_oop.numbertwo.variantone.validation;
 
 import java.util.regex.Pattern;
 

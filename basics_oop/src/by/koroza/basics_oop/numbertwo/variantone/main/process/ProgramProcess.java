@@ -2,8 +2,8 @@ package by.koroza.basics_oop.numbertwo.variantone.main.process;
 
 import java.util.Scanner;
 
-import by.koroza.basics_oop.numbertwo.validation.Validation;
 import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
+import by.koroza.basics_oop.numbertwo.variantone.validation.Validation;
 
 public class ProgramProcess {
 	private static final String MASSEGE_ENTER_PRODUCT_NUMBER = "enter the product number you want to buy.";

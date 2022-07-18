@@ -2,9 +2,9 @@ package by.koroza.basics_oop.numbertwo.variantone.main.process;
 
 import java.util.Scanner;
 
-import by.koroza.basics_oop.numbertwo.validation.Validation;
 import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
 import by.koroza.basics_oop.numbertwo.variantone.entity.Product;
+import by.koroza.basics_oop.numbertwo.variantone.validation.Validation;
 
 public class Payment {
 	private static final String MASSEGE_DOES_NOT_MONEY_IN_BANK_ACCOUNT = "you doesn't have enough moneyin your bank account. ";
