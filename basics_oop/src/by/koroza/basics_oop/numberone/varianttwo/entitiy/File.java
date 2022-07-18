@@ -1,5 +1,6 @@
 package by.koroza.basics_oop.numberone.varianttwo.entitiy;
 
+@SuppressWarnings("serial")
 public class File extends java.io.File {
 	public File(String pathname) {
 		super(pathname);

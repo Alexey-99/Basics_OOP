@@ -9,7 +9,7 @@ import by.koroza.basics_oop.numberone.varianttwo.entitiy.TextFile;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Directoire directoire = new Directoire("basics_oop/resources/text");
+		Directoire directoire = new Directoire("/resources");
 		File file = new File(directoire, "text2.txt");
 
 		TextFile textFile = new TextFile(directoire, file);
@@ -24,7 +24,5 @@ public class Main {
 		textFile.create(directoire.getPath());
 		textFile.create(directoire.getPath() + "/" + file.getName());
 		textFile.rename("text3.txt");
-
 	}
-
 }
