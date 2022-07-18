@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numbertwo.varianttwo.main;
+package by.koroza.basics_oop.numbertwo.varianttwo;
 
 public class Main {
 
