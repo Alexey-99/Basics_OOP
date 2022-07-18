@@ -1,8 +1,8 @@
-package by.koroza.basics_oop.numberone.validation;
+package by.koroza.basics_oop.numberone.variantone.validation;
 
 import java.util.regex.Pattern;
 
-import by.koroza.basics_oop.numberone.entitiy.TextFile;
+import by.koroza.basics_oop.numberone.variantone.entitiy.TextFile;
 
 public class Validation {
 	private static final String REG_EX_VALID_FOR_DIGITS = "\\d+";

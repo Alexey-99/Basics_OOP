@@ -1,8 +1,8 @@
-package by.koroza.basics_oop.numberone.entitiy;
+package by.koroza.basics_oop.numberone.variantone.entitiy;
 
 import java.util.Scanner;
 
-import by.koroza.basics_oop.numberone.validation.Validation;
+import by.koroza.basics_oop.numberone.variantone.validation.Validation;
 
 public class Directory {
 	private String nameDirectory;

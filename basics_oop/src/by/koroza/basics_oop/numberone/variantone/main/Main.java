@@ -2,10 +2,10 @@
  * Методы: создать (file, derictory), переименовать (file, derictory), вывести на консоль содержимое(file), дополнить (file, derictory), удалить (file). 
  * */
 
-package by.koroza.basics_oop.numberone.main;
+package by.koroza.basics_oop.numberone.variantone.main;
 
-import by.koroza.basics_oop.numberone.entitiy.Directory;
-import by.koroza.basics_oop.numberone.entitiy.TextFile;
+import by.koroza.basics_oop.numberone.variantone.entitiy.Directory;
+import by.koroza.basics_oop.numberone.variantone.entitiy.TextFile;
 
 public class Main {
 
