@@ -1,5 +1,11 @@
 /* Создать объект класса Текстовый файл, используя классы Файл, Директория. 
- * Методы: создать (file, derictory), переименовать (file, derictory), вывести на консоль содержимое(file), дополнить (file, derictory), удалить (file). 
+ * 
+ * Методы: 
+ * создать (file, derictory), 
+ * переименовать (file, derictory), 
+ * вывести на консоль содержимое(file), 
+ * дополнить (file, derictory), 
+ * удалить (file). 
  * */
 
 package by.koroza.basics_oop.numberone.variantone.main;
