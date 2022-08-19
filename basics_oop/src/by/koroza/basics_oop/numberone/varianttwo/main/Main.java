@@ -33,6 +33,6 @@ public class Main {
 		textFile.deleted();
 		textFile.create(directoire.getPath());
 		textFile.create(directoire.getPath() + "/" + file.getName());
-		textFile.rename("text3.txt");
+		textFile.rename("text4.txt");
 	}
 }
