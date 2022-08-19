@@ -14,33 +14,14 @@
 
 package by.koroza.basics_oop.numberfour.main;
 
+import java.io.File;
 import java.io.IOException;
-
-import by.koroza.basics_oop.numberone.varianttwo.entitiy.Directoire;
-import by.koroza.basics_oop.numberone.varianttwo.entitiy.File;
-import by.koroza.basics_oop.numberone.varianttwo.entitiy.TextFile;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
-		createFile();
+	public static void main(String[] args) throws IOException  {
+		File file = new File("resources/text.txt");
+		file.createNewFile();
 	}
 	
-	private static void createFile() throws IOException {
-		Directoire directoire = new Directoire("resources1");
-		File file = new File(directoire, "text2.txt");
-
-		TextFile textFile = new TextFile(directoire, file);
-
-//        TextFile textFile = new TextFile();
-//        textFile.create("src/resources/text/text2");
-//        textFile.create("src/resources/text/text2/text2.txt");
-		textFile.printConsole();
-		textFile.addText("TEXT ADDED");
-		textFile.printConsole();
-		textFile.deleted();
-		textFile.create(directoire.getPath());
-		textFile.create(directoire.getPath() + "/" + file.getName());
-		textFile.rename("text4.txt");
-	}
 }
