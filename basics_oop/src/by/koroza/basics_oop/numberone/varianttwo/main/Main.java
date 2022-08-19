@@ -1,3 +1,13 @@
+/* Создать объект класса Текстовый файл, используя классы Файл, Директория. 
+ * 
+ * Методы: 
+ * создать (file, derictory), 
+ * переименовать (file, derictory), 
+ * вывести на консоль содержимое(file), 
+ * дополнить (file, derictory), 
+ * удалить (file). 
+ * */
+
 package by.koroza.basics_oop.numberone.varianttwo.main;
 
 import java.io.IOException;
@@ -9,7 +19,7 @@ import by.koroza.basics_oop.numberone.varianttwo.entitiy.TextFile;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Directoire directoire = new Directoire("/resources");
+		Directoire directoire = new Directoire("resources");
 		File file = new File(directoire, "text2.txt");
 
 		TextFile textFile = new TextFile(directoire, file);
