@@ -20,7 +20,9 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) throws IOException  {
-		File file = new File("resources/text.txt");
+		File der = new File("resources");
+		der.createNewFile();
+		File file = new File(der, "text.txt");
 		file.createNewFile();
 	}
 	
