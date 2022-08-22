@@ -27,6 +27,9 @@ public class Main {
 		TextFile textFile = new TextFile(directoire, file);
 		textFile.printToFile();
 		textFile.searchTreasureWithMinPrice(file);
+		textFile.searchTreasureWithMaxPrice(file);
+		textFile.searchTreasureBetweenMinToMaxPrices(file, 100, 500);
+		textFile.searchTreasureSelectedPrice(file, 300);
 		
 		//textFile.delete();
 		

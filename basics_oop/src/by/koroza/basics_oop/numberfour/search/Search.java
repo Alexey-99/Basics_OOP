@@ -7,23 +7,28 @@ import java.util.Scanner;
 public class Search {
 	private static final String LINE_TWO_SPACE = "  ";
 	private static final String LINE_NUMBER_FIRST_LINE = "0";
+	private static final String MESSAGE_LIST_DOES_NOT_HAVE_TREASURE_WITH_PRICE = "The list treasure doesn't have treasure with selected price.";
 
 	public void searchTreasureWithMinPrice(File file) throws FileNotFoundException {
+		System.out.println("MIN");
 		double minPrice = findMinPrice(file);
 		printTreasureWithSelectedPrice(file, minPrice);
 	}
 
 	public void searchTreasureWithMaxPrice(File file) throws FileNotFoundException {
+		System.out.println("MAX");
 		double maxPrice = findMaxPrice(file);
 		printTreasureWithSelectedPrice(file, maxPrice);
 	}
 
 	public void searchTreasureBetweenMinToMaxPrices(File file, double minPrice, double maxPrice)
 			throws FileNotFoundException {
+		System.out.println("BETWEEN");
 		printTreasureBetweenMinToMaxPrices(file, minPrice, maxPrice);
 	}
 
 	public void searchTreasureSelectedPrice(File file, double price) throws FileNotFoundException {
+		System.out.println("SELECT");
 		printTreasureWithSelectedPrice(file, price);
 	}
 
@@ -70,6 +75,7 @@ public class Search {
 	}
 
 	private void printTreasureWithSelectedPrice(File file, double price) throws FileNotFoundException {
+		boolean isPresence = false;
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(file);
 		while (scan.hasNextLine()) {
@@ -78,12 +84,17 @@ public class Search {
 			double priceTreasure = Double.parseDouble(array[2]);
 			if (priceTreasure == price) {
 				System.out.println(line);
+				isPresence = true;
 			}
+		}
+		if (isPresence == false) {
+			System.out.println(MESSAGE_LIST_DOES_NOT_HAVE_TREASURE_WITH_PRICE);
 		}
 	}
 
 	private void printTreasureBetweenMinToMaxPrices(File file, double minPrice, double maxPrice)
 			throws FileNotFoundException {
+		boolean isPresence = false;
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(file);
 		while (scan.hasNextLine()) {
@@ -92,7 +103,11 @@ public class Search {
 			double priceTreasure = Double.parseDouble(array[2]);
 			if (priceTreasure >= minPrice && priceTreasure <= maxPrice) {
 				System.out.println(line);
+				isPresence = true;
 			}
+		}
+		if (isPresence == false) {
+			System.out.println(MESSAGE_LIST_DOES_NOT_HAVE_TREASURE_WITH_PRICE);
 		}
 	}
 }
