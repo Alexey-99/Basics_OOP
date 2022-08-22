@@ -10,25 +10,21 @@ public class Search {
 	private static final String MESSAGE_LIST_DOES_NOT_HAVE_TREASURE_WITH_PRICE = "The list treasure doesn't have treasure with selected price.";
 
 	public void searchTreasureWithMinPrice(File file) throws FileNotFoundException {
-		System.out.println("MIN");
 		double minPrice = findMinPrice(file);
 		printTreasureWithSelectedPrice(file, minPrice);
 	}
 
 	public void searchTreasureWithMaxPrice(File file) throws FileNotFoundException {
-		System.out.println("MAX");
 		double maxPrice = findMaxPrice(file);
 		printTreasureWithSelectedPrice(file, maxPrice);
 	}
 
 	public void searchTreasureBetweenMinToMaxPrices(File file, double minPrice, double maxPrice)
 			throws FileNotFoundException {
-		System.out.println("BETWEEN");
 		printTreasureBetweenMinToMaxPrices(file, minPrice, maxPrice);
 	}
 
 	public void searchTreasureSelectedPrice(File file, double price) throws FileNotFoundException {
-		System.out.println("SELECT");
 		printTreasureWithSelectedPrice(file, price);
 	}
 
@@ -49,7 +45,7 @@ public class Search {
 				price = priceBuffer;
 			}
 		}
-		System.out.println("MIN:" + minPrice);
+		System.out.println("MIN price:" + minPrice);
 		return minPrice;
 	}
 
@@ -70,7 +66,7 @@ public class Search {
 				price = priceBuffer;
 			}
 		}
-		System.out.println("MAX:" + maxPrice);
+		System.out.println("MAX price:" + maxPrice);
 		return maxPrice;
 	}
 

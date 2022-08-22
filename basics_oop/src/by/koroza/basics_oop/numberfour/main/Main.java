@@ -21,21 +21,28 @@ import by.koroza.basics_oop.numberfour.entity.File;
 import by.koroza.basics_oop.numberfour.entity.TextFile;
 
 public class Main {
+	private static final String LINE_TREASURE_WITH_MIN_PRICE = "Treasure with minimum price";
+	private static final String LINE_TREASURE_WITH_MAX_PRICE = "Treasure with maximum price";
+	private static final String LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES = "Treasure with prices between selected";
+	private static final String LINE_TREASURE_WITH_SELECTED_PRICE = "Treasure with selected price";
+	private static final String OPERATION_NEXT_LINE = "\n";
 
 	public static void main(String[] args) throws IOException {
 		Directoire directoireMain = new Directoire("resources");
-		
+
 		Directoire directoire = new Directoire(directoireMain, "treasure");
 		File file = new File(directoire, "treasureList.txt");
-		
+
 		TextFile textFile = new TextFile(directoire, file);
 		textFile.printToFile();
+		
+		System.out.println(LINE_TREASURE_WITH_MIN_PRICE);
 		textFile.searchTreasureWithMinPrice(file);
+		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_MAX_PRICE);
 		textFile.searchTreasureWithMaxPrice(file);
+		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES);
 		textFile.searchTreasureBetweenMinToMaxPrices(file, 100, 500);
+		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_SELECTED_PRICE);
 		textFile.searchTreasureSelectedPrice(file, 300);
-		
-		//textFile.delete();
-		
 	}
 }
