@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberfour.main.process;
+package by.koroza.basics_oop.numberfour.process;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

@@ -19,7 +19,7 @@ import java.io.IOException;
 import by.koroza.basics_oop.numberfour.entity.Directoire;
 import by.koroza.basics_oop.numberfour.entity.File;
 import by.koroza.basics_oop.numberfour.entity.TextFile;
-import by.koroza.basics_oop.numberfour.main.process.ProgramProcess;
+import by.koroza.basics_oop.numberfour.process.ProgramProcess;
 
 public class Main {
 	private static final String LINE_TREASURE_WITH_MIN_PRICE = "Treasure with minimum price";
