@@ -11,6 +11,7 @@
 package by.koroza.basics_oop.numberone.varianttwo.main;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import by.koroza.basics_oop.numberone.varianttwo.entitiy.Directoire;
 import by.koroza.basics_oop.numberone.varianttwo.entitiy.File;
@@ -23,16 +24,15 @@ public class Main {
 		File file = new File(directoire, "text2.txt");
 
 		TextFile textFile = new TextFile(directoire, file);
-
-//        TextFile textFile = new TextFile();
-//        textFile.create("src/resources/text/text2");
-//        textFile.create("src/resources/text/text2/text2.txt");
-		//textFile.printConsole();
+		
+		textFile.printConsole();
 		textFile.addText("TEXT ADDED");
 		textFile.printConsole();
-		/*textFile.deleted();
-		textFile.create(directoire.getPath());
+		textFile.deleted();
+		/*textFile.create(directoire.getPath());
 		textFile.create(directoire.getPath() + "/" + file.getName());
 		textFile.rename("text4.txt");*/
+		
+		System.out.println(Arrays.toString(directoire.list()));
 	}
 }
