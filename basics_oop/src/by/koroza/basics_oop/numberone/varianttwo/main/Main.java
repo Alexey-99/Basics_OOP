@@ -27,12 +27,12 @@ public class Main {
 //        TextFile textFile = new TextFile();
 //        textFile.create("src/resources/text/text2");
 //        textFile.create("src/resources/text/text2/text2.txt");
-		textFile.printConsole();
+		//textFile.printConsole();
 		textFile.addText("TEXT ADDED");
 		textFile.printConsole();
-		textFile.deleted();
+		/*textFile.deleted();
 		textFile.create(directoire.getPath());
 		textFile.create(directoire.getPath() + "/" + file.getName());
-		textFile.rename("text4.txt");
+		textFile.rename("text4.txt");*/
 	}
 }
