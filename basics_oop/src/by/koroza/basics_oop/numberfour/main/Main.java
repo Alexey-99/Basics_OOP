@@ -14,16 +14,16 @@
 
 package by.koroza.basics_oop.numberfour.main;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException  {
-		File der = new File("resources");
-		der.createNewFile();
-		File file = new File(der, "text.txt");
-		file.createNewFile();
+	public static void main(String[] args) throws IOException {
+		Directoire directoire = new Directoire("treasure");
+		File file = new File("treasureList");
+		TextFile textFile = new TextFile(directoire, file);
+		
+
 	}
-	
+
 }

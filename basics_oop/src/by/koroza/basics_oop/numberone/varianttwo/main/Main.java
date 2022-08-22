@@ -29,9 +29,9 @@ public class Main {
 		textFile.addText("TEXT ADDED");
 		textFile.printConsole();
 		textFile.deleted();
-		/*textFile.create(directoire.getPath());
+		textFile.create(directoire.getPath());
 		textFile.create(directoire.getPath() + "/" + file.getName());
-		textFile.rename("text4.txt");*/
+		textFile.rename("text4.txt");
 		
 		System.out.println(Arrays.toString(directoire.list()));
 	}
