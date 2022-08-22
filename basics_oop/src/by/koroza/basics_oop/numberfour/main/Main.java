@@ -37,7 +37,7 @@ public class Main {
 		TextFile textFile = new TextFile(directoire, file);
 		textFile.printToFile();
 		
-		ProgramProcess.programProcess();
+		ProgramProcess.programProcess(textFile);
 		
 		/*System.out.println(LINE_TREASURE_WITH_MIN_PRICE);
 		textFile.searchTreasureWithMinPrice(file);
