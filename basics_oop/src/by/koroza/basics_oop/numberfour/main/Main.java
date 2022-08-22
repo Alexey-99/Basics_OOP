@@ -14,16 +14,29 @@
 
 package by.koroza.basics_oop.numberfour.main;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
 		Directoire directoire = new Directoire("treasure");
-		File file = new File("treasureList");
+		File file = new File(directoire, "treasureList.txt");
 		TextFile textFile = new TextFile(directoire, file);
+		printWriter(file);
+		
+		//textFile.delete();
+		
 		
 
+	}
+	
+	public static void printWriter(File file) throws FileNotFoundException {
+		PrintWriter pw = new PrintWriter(file);
+		pw.println("Hello");
+		pw.println("Hello");
+		pw.close();
 	}
 
 }
