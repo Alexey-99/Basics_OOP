@@ -11,7 +11,7 @@ import by.koroza.basics_oop.numberthree.variantone.entity.Сalendar;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // TODO ПЕРЕДЕЛАТЬ
 		Day[] daysJule = { new Day(1), new Day(2), new Day(3), new Day(4), new Day(5, true) };
 		Month jule = new Month("Jule", daysJule);
 		Day[] daysJune = { new Day(1, true, true), new Day(2), new Day(3), new Day(4), new Day(5) };
