@@ -16,6 +16,10 @@ package by.koroza.basics_oop.numberfour.main;
 
 import java.io.IOException;
 
+import by.koroza.basics_oop.numberfour.entity.Directoire;
+import by.koroza.basics_oop.numberfour.entity.File;
+import by.koroza.basics_oop.numberfour.entity.TextFile;
+
 public class Main {
 
 	public static void main(String[] args) throws IOException {

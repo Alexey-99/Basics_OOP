@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberfour.main;
+package by.koroza.basics_oop.numberfour.entity;
 
 import java.util.Random;
 

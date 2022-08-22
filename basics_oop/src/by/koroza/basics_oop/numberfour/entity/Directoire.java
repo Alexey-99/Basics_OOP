@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberfour.main;
+package by.koroza.basics_oop.numberfour.entity;
 
 @SuppressWarnings("serial")
 public class Directoire extends File {
