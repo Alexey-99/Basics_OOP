@@ -41,5 +41,7 @@ public class TextFile {
 	public void deleteDirectoire() {
 		directoire.delete();
 	}
+	
+	
 
 }
