@@ -3,6 +3,8 @@ package by.koroza.basics_oop.numberfour.main;
 import java.io.IOException;
 
 public class TextFile {
+	private static final int MAX_NUMBER_TREASURE = 100;
+	
 	private Directoire directoire;
 	private File file;
 
@@ -42,6 +44,10 @@ public class TextFile {
 		directoire.delete();
 	}
 	
-	
+	public void printToFile() {
+		for(int i = 0; i < MAX_NUMBER_TREASURE; i++) {
+			
+		}
+	}
 
 }
