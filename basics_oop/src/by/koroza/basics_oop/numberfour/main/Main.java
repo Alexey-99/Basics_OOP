@@ -40,7 +40,7 @@ public class Main {
 		textFile.searchTreasureWithMinPrice(file);
 		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_MAX_PRICE);
 		textFile.searchTreasureWithMaxPrice(file);
-		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES);
+		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES); // 
 		textFile.searchTreasureBetweenMinToMaxPrices(file, 100, 500);
 		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_SELECTED_PRICE);
 		textFile.searchTreasureSelectedPrice(file, 300);

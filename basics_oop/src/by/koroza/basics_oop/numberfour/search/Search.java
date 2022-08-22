@@ -10,8 +10,7 @@ public class Search {
 	private static final String MESSAGE_LIST_DOES_NOT_HAVE_TREASURE_WITH_PRICE = "The list treasure doesn't have treasure with selected price.";
 	private static final String MESSAGE_MIN_PRICE = "Minimum price: ";
 	private static final String MESSAGE_MAX_PRICE = "Maximum price: ";
-	
-	
+
 	public void searchTreasureWithMinPrice(File file) throws FileNotFoundException {
 		double minPrice = findMinPrice(file);
 		printTreasureWithSelectedPrice(file, minPrice);
@@ -24,6 +23,11 @@ public class Search {
 
 	public void searchTreasureBetweenMinToMaxPrices(File file, double minPrice, double maxPrice)
 			throws FileNotFoundException {
+		if (minPrice > maxPrice) {
+			double priceBuffer = minPrice;
+			minPrice = maxPrice;
+			maxPrice = priceBuffer;
+		}
 		printTreasureBetweenMinToMaxPrices(file, minPrice, maxPrice);
 	}
 

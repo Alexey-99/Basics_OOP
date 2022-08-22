@@ -15,7 +15,7 @@ import by.koroza.basics_oop.numberone.variantone.entitiy.TextFile;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //TODO ПЕРЕДЕЛАТЬ
 		Directory directory = new Directory("files");
 		TextFile file = new TextFile("name", "content content1 content2 ");
 		file.replenishContent("replenishContent");
