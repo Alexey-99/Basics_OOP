@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class TextFile {
+import by.koroza.basics_oop.numberfour.search.Search;
+
+public class TextFile extends Search {
 	private static final int MAX_NUMBER_TREASURE = 100;
 
 	private Directoire directoire;
@@ -50,7 +52,12 @@ public class TextFile {
 		PrintWriter pw = new PrintWriter(file);
 		for (int i = 0; i <= MAX_NUMBER_TREASURE; i++) {
 			TreasureDescription treasureDescription = new TreasureDescription();
-			pw.println(treasureDescription.toString());
+			if (i < MAX_NUMBER_TREASURE) {
+				pw.println(treasureDescription.toString());
+			}
+			if (i == MAX_NUMBER_TREASURE) {
+				pw.print(treasureDescription.toString());
+			}
 		}
 		pw.close();
 	}
