@@ -6,6 +6,7 @@ public class TreasureDescription {
 	private static int count = 0;
 	private static final String DEFAULT_NAME = "Treasure";
 	private static final int MAX_PRICE = 1000;
+	private static final String LINE_TWO_SPACE = "  ";
 
 	private int number;
 	private String name;
@@ -93,5 +94,12 @@ public class TreasureDescription {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(number).append(LINE_TWO_SPACE).append(name).append(LINE_TWO_SPACE).append(price);
+		return builder.toString();
 	}
 }

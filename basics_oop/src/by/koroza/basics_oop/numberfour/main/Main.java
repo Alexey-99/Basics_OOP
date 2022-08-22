@@ -25,7 +25,7 @@ public class Main {
 		Directoire directoire = new Directoire(directoireMain, "treasure");
 		File file = new File(directoire, "treasureList.txt");
 		TextFile textFile = new TextFile(directoire, file);
-		
+		textFile.printToFile();
 		//textFile.delete();
 		
 		
