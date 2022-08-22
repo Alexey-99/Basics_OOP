@@ -13,7 +13,6 @@ public class ProgramProcess {
 	private static final String LINE_TREASURE_WITH_SELECTED_PRICE = "Treasure with selected price. (Enter 3)";
 	private static final String LINE_LOG_OUT = "Log out. (Enter 4)";
 	private static final String MESSAGE_ENTER_NUMBER_OPERATION = "Enter the operation number";
-
 	private static final String OPERATION_NEXT_LINE = "\n";
 
 	public static void programProcess(TextFile textFile) throws FileNotFoundException {
