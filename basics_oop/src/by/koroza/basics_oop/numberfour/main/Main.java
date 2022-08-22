@@ -19,6 +19,7 @@ import java.io.IOException;
 import by.koroza.basics_oop.numberfour.entity.Directoire;
 import by.koroza.basics_oop.numberfour.entity.File;
 import by.koroza.basics_oop.numberfour.entity.TextFile;
+import by.koroza.basics_oop.numberfour.main.process.ProgramProcess;
 
 public class Main {
 	private static final String LINE_TREASURE_WITH_MIN_PRICE = "Treasure with minimum price";
@@ -36,13 +37,15 @@ public class Main {
 		TextFile textFile = new TextFile(directoire, file);
 		textFile.printToFile();
 		
-		System.out.println(LINE_TREASURE_WITH_MIN_PRICE);
+		ProgramProcess.programProcess();
+		
+		/*System.out.println(LINE_TREASURE_WITH_MIN_PRICE);
 		textFile.searchTreasureWithMinPrice(file);
 		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_MAX_PRICE);
 		textFile.searchTreasureWithMaxPrice(file);
 		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES); // 
 		textFile.searchTreasureBetweenMinToMaxPrices(file, 100, 500);
 		System.out.println(OPERATION_NEXT_LINE + LINE_TREASURE_WITH_SELECTED_PRICE);
-		textFile.searchTreasureSelectedPrice(file, 300);
+		textFile.searchTreasureSelectedPrice(file, 300);*/
 	}
 }
