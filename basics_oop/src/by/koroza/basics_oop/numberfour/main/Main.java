@@ -21,7 +21,9 @@ import java.io.PrintWriter;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Directoire directoire = new Directoire("treasure");
+		Directoire directoireMain = new Directoire("resources");
+		directoireMain.mkdirs();
+		Directoire directoire = new Directoire(directoireMain, "treasure");
 		File file = new File(directoire, "treasureList.txt");
 		TextFile textFile = new TextFile(directoire, file);
 		

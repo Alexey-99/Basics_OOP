@@ -8,7 +8,7 @@ public class TextFile {
 
 	public TextFile(Directoire directoire, File file) throws IOException {
 		this.directoire = directoire;
-		directoire.mkdir();
+		directoire.mkdirs();
 		this.file = file;
 		file.createNewFile();
 	}
