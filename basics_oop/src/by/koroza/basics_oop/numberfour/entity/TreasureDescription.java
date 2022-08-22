@@ -5,12 +5,12 @@ import java.util.Random;
 public class TreasureDescription {
 	private static int count = 0;
 	private static final String DEFAULT_NAME = "Treasure";
-	private static final int MAX_PRICE = 1000;
+	private static final double MAX_PRICE = 1000;
 	private static final String LINE_TWO_SPACE = "  ";
 
 	private int number;
 	private String name;
-	private int price;
+	private double price;
 
 	public TreasureDescription() {
 		this.number = count++;
@@ -40,18 +40,18 @@ public class TreasureDescription {
 		this.name = name;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	private int decarationPrice() {
-		int price = 0;
+	private double decarationPrice() {
+		double price = 0;
 		Random rand = new Random();
-		price = rand.nextInt(MAX_PRICE);
+		price = rand.nextInt((int)MAX_PRICE);
 		return price;
 	}
 
@@ -61,10 +61,10 @@ public class TreasureDescription {
 		int result = 31;
 		result = result * prime + count;
 		result = result * prime + (DEFAULT_NAME != null ? DEFAULT_NAME.hashCode() : 1);
-		result = result * prime + MAX_PRICE;
+		result = result * prime + Double.hashCode(MAX_PRICE);
 		result = result * prime + number;
 		result = result * prime + (name != null ? name.hashCode() : 1);
-		result = result * prime + price;
+		result = result * prime + Double.hashCode(price);
 		return result;
 	}
 

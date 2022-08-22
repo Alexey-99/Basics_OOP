@@ -8,7 +8,10 @@ public class Search {
 	private static final String LINE_TWO_SPACE = "  ";
 	private static final String LINE_NUMBER_FIRST_LINE = "0";
 	private static final String MESSAGE_LIST_DOES_NOT_HAVE_TREASURE_WITH_PRICE = "The list treasure doesn't have treasure with selected price.";
-
+	private static final String MESSAGE_MIN_PRICE = "Minimum price: ";
+	private static final String MESSAGE_MAX_PRICE = "Maximum price: ";
+	
+	
 	public void searchTreasureWithMinPrice(File file) throws FileNotFoundException {
 		double minPrice = findMinPrice(file);
 		printTreasureWithSelectedPrice(file, minPrice);
@@ -45,7 +48,7 @@ public class Search {
 				price = priceBuffer;
 			}
 		}
-		System.out.println("MIN price:" + minPrice);
+		System.out.println(MESSAGE_MIN_PRICE + minPrice);
 		return minPrice;
 	}
 
@@ -66,7 +69,7 @@ public class Search {
 				price = priceBuffer;
 			}
 		}
-		System.out.println("MAX price:" + maxPrice);
+		System.out.println(MESSAGE_MAX_PRICE + maxPrice);
 		return maxPrice;
 	}
 
