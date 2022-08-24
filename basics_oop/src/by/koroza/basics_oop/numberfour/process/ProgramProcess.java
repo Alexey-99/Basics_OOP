@@ -14,6 +14,11 @@ public class ProgramProcess {
 	private static final String LINE_LOG_OUT = "Log out. (Enter 4)";
 	private static final String MESSAGE_ENTER_NUMBER_OPERATION = "Enter the operation number";
 	private static final String OPERATION_NEXT_LINE = "\n";
+	private static final String CODE_FIRST_OPERATION = "0";
+	private static final String CODE_SECOND_OPERATION = "1";
+	private static final String CODE_THIRD_OPERATION = "2";
+	private static final String CODE_FOURTH_OPERATION = "3";
+	private static final String CODE_FIFTH_OPERATION = "4";
 
 	public static void programProcess(TextFile textFile) throws FileNotFoundException {
 		boolean isFlagMain = true;
@@ -21,19 +26,19 @@ public class ProgramProcess {
 			printMainOperations();
 			String number = enterNumberOperation();
 			switch (number) {
-			case "0":
+			case CODE_FIRST_OPERATION:
 				operationSearchMinPrice(textFile);
 				break;
-			case "1":
+			case CODE_SECOND_OPERATION:
 				operationSearchMaxPrice(textFile);
 				break;
-			case "2":
+			case CODE_THIRD_OPERATION:
 				operationSearchBetweenMinToMaxPrices(textFile);
 				break;
-			case "3":
+			case CODE_FOURTH_OPERATION:
 				operationSearchSelectedPrice(textFile);
 				break;
-			case "4":
+			case CODE_FIFTH_OPERATION:
 				isFlagMain = false;
 				break;
 			}
@@ -64,30 +69,37 @@ public class ProgramProcess {
 	private static void operationSearchMinPrice(TextFile textFile) throws FileNotFoundException {
 		textFile.searchTreasureWithMinPrice(textFile.getFile());
 	}
-	
+
 	private static void operationSearchMaxPrice(TextFile textFile) throws FileNotFoundException {
 		textFile.searchTreasureWithMaxPrice(textFile.getFile());
 	}
-	
+
 	private static void operationSearchBetweenMinToMaxPrices(TextFile textFile) throws FileNotFoundException {
 		System.out.println("Enter first price.");
-		int priceFirst = 646;
+		double priceFirst = enterPriceTreasure();
 		System.out.println("Enter second price.");
-		int priceSecond = 646;
-		textFile.searchTreasureBetweenMinToMaxPrices(textFile.getFile(), 100, 500); // TODO
+		double priceSecond = enterPriceTreasure();
+		textFile.searchTreasureBetweenMinToMaxPrices(textFile.getFile(), priceFirst, priceSecond); // TODO
 	}
-	
+
 	private static void operationSearchSelectedPrice(TextFile textFile) throws FileNotFoundException {
 		textFile.searchTreasureSelectedPrice(textFile.getFile(), 300); // TODO
 	}
-	
-	private static void enterPriceTreasure() {
+
+	private static double enterPriceTreasure() {
 		String price = "";
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		do {
 			price = scan.nextLine();
-		} while (Validation.enterNumberOperation(price) == false);
+		} while (Validation.enterPriceTreasure(price) == false);
+		double parceDouble = parseDouble(price);
+		return parceDouble;
 	}
-	
-	
+
+	private static double parseDouble(String price) {
+		double priceDouble = Double.parseDouble(price);
+		return priceDouble;
+	}
+
 }
