@@ -16,7 +16,7 @@ public class ProgramProcess {
 	private static final String MESSAGE_ENTER_NUMBER_OPERATION = "Enter the operation number";
 	private static final String MESSAGE_ENTER_FIRST_PRICE = "Enter first price.";
 	private static final String MESSAGE_ENTER_SECOND_PRICE = "Enter second price.";
-	
+
 	private static final String OPERATION_NEXT_LINE = "\n";
 
 	private static final String CODE_FIRST_OPERATION = "0";
@@ -88,7 +88,8 @@ public class ProgramProcess {
 	}
 
 	private static void operationSearchSelectedPrice(TextFile textFile) throws FileNotFoundException {
-		textFile.searchTreasureSelectedPrice(textFile.getFile(), 300); // TODO
+		double price = enterPriceTreasure();
+		textFile.searchTreasureSelectedPrice(textFile.getFile(), price);
 	}
 
 	private static double enterPriceTreasure() {
@@ -106,5 +107,4 @@ public class ProgramProcess {
 		double priceDouble = Double.parseDouble(price);
 		return priceDouble;
 	}
-
 }
