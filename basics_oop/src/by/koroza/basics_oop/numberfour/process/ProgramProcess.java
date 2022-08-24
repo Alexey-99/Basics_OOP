@@ -22,6 +22,7 @@ public class ProgramProcess {
 	private static final String MESSAGE_ENTER_NUMBER_OPERATION = "Enter the operation number";
 	private static final String MESSAGE_ENTER_FIRST_PRICE = "Enter first price.";
 	private static final String MESSAGE_ENTER_SECOND_PRICE = "Enter second price.";
+	private static final String MESSAGE_ENTER_PRICE = "Enter price for search.";
 
 	private static final String OPERATION_NEXT_LINE = "\n";
 
@@ -88,6 +89,7 @@ public class ProgramProcess {
 	}
 
 	private static void operationSearchSelectedPrice(TextFile textFile) throws FileNotFoundException {
+		System.out.println(MESSAGE_ENTER_PRICE);
 		double price = enterPriceTreasure();
 		textFile.searchTreasureSelectedPrice(textFile.getFile(), price);
 	}
