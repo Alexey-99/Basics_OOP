@@ -70,10 +70,24 @@ public class ProgramProcess {
 	}
 	
 	private static void operationSearchBetweenMinToMaxPrices(TextFile textFile) throws FileNotFoundException {
+		System.out.println("Enter first price.");
+		int priceFirst = 646;
+		System.out.println("Enter second price.");
+		int priceSecond = 646;
 		textFile.searchTreasureBetweenMinToMaxPrices(textFile.getFile(), 100, 500); // TODO
 	}
 	
 	private static void operationSearchSelectedPrice(TextFile textFile) throws FileNotFoundException {
 		textFile.searchTreasureSelectedPrice(textFile.getFile(), 300); // TODO
 	}
+	
+	private static void enterPriceTreasure() {
+		String price = "";
+		Scanner scan = new Scanner(System.in);
+		do {
+			price = scan.nextLine();
+		} while (Validation.enterNumberOperation(price) == false);
+	}
+	
+	
 }
