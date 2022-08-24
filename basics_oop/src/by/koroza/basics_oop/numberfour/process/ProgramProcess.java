@@ -7,11 +7,11 @@ import by.koroza.basics_oop.numberfour.entity.TextFile;
 import by.koroza.basics_oop.numberfour.validation.Validation;
 
 public class ProgramProcess {
-	private static final String LINE_TREASURE_WITH_MIN_PRICE = "Treasure with minimum price. (Enter 0)";
-	private static final String LINE_TREASURE_WITH_MAX_PRICE = "Treasure with maximum price. (Enter 1) ";
-	private static final String LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES = "Treasure with prices between selected. (Enter 2)";
-	private static final String LINE_TREASURE_WITH_SELECTED_PRICE = "Treasure with selected price. (Enter 3)";
-	private static final String LINE_LOG_OUT = "Log out. (Enter 4)";
+	private static final String NAME_OPERATION_TREASURE_WITH_MIN_PRICE_ZERO = "Treasure with minimum price. (Enter 0)";
+	private static final String NAME_OPERATION_TREASURE_WITH_MAX_PRICE_ONE = "Treasure with maximum price. (Enter 1) ";
+	private static final String NAME_OPERATION_TREASURE_WITH_BETWEEN_SELECTED_PRICES_TWO = "Treasure with prices between selected. (Enter 2)";
+	private static final String NAME_OPERATION_TREASURE_WITH_SELECTED_PRICE_THREE = "Treasure with selected price. (Enter 3)";
+	private static final String NAME_OPERATION_LOG_OUT_FOUR = "Log out. (Enter 4)";
 
 	private static final String CODE_FIRST_OPERATION = "0";
 	private static final String CODE_SECOND_OPERATION = "1";
@@ -53,11 +53,11 @@ public class ProgramProcess {
 
 	private static void printMainOperations() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(LINE_TREASURE_WITH_MIN_PRICE).append(OPERATION_NEXT_LINE);
-		builder.append(LINE_TREASURE_WITH_MAX_PRICE).append(OPERATION_NEXT_LINE);
-		builder.append(LINE_TREASURE_WITH_BETWEEN_SELECTED_PRICES).append(OPERATION_NEXT_LINE);
-		builder.append(LINE_TREASURE_WITH_SELECTED_PRICE).append(OPERATION_NEXT_LINE);
-		builder.append(LINE_LOG_OUT).append(OPERATION_NEXT_LINE);
+		builder.append(NAME_OPERATION_TREASURE_WITH_MIN_PRICE_ZERO).append(OPERATION_NEXT_LINE);
+		builder.append(NAME_OPERATION_TREASURE_WITH_MAX_PRICE_ONE).append(OPERATION_NEXT_LINE);
+		builder.append(NAME_OPERATION_TREASURE_WITH_BETWEEN_SELECTED_PRICES_TWO).append(OPERATION_NEXT_LINE);
+		builder.append(NAME_OPERATION_TREASURE_WITH_SELECTED_PRICE_THREE).append(OPERATION_NEXT_LINE);
+		builder.append(NAME_OPERATION_LOG_OUT_FOUR).append(OPERATION_NEXT_LINE);
 		System.out.println(builder);
 	}
 
