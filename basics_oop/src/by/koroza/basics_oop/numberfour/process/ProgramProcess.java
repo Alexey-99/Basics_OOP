@@ -22,16 +22,16 @@ public class ProgramProcess {
 			String number = enterNumberOperation();
 			switch (number) {
 			case "0":
-				textFile.searchTreasureWithMinPrice(textFile.getFile());
+				operationSearchMinPrice(textFile);
 				break;
 			case "1":
-				textFile.searchTreasureWithMaxPrice(textFile.getFile());
+				operationSearchMaxPrice(textFile);
 				break;
 			case "2":
-				textFile.searchTreasureBetweenMinToMaxPrices(textFile.getFile(), 100, 500); // TODO
+				operationSearchBetweenMinToMaxPrices(textFile);
 				break;
 			case "3":
-				textFile.searchTreasureSelectedPrice(textFile.getFile(), 300); // TODO
+				operationSearchSelectedPrice(textFile);
 				break;
 			case "4":
 				isFlagMain = false;
@@ -59,5 +59,21 @@ public class ProgramProcess {
 			number = scan.nextLine();
 		} while (Validation.enterNumberOperation(number) == false);
 		return number;
+	}
+
+	private static void operationSearchMinPrice(TextFile textFile) throws FileNotFoundException {
+		textFile.searchTreasureWithMinPrice(textFile.getFile());
+	}
+	
+	private static void operationSearchMaxPrice(TextFile textFile) throws FileNotFoundException {
+		textFile.searchTreasureWithMaxPrice(textFile.getFile());
+	}
+	
+	private static void operationSearchBetweenMinToMaxPrices(TextFile textFile) throws FileNotFoundException {
+		textFile.searchTreasureBetweenMinToMaxPrices(textFile.getFile(), 100, 500); // TODO
+	}
+	
+	private static void operationSearchSelectedPrice(TextFile textFile) throws FileNotFoundException {
+		textFile.searchTreasureSelectedPrice(textFile.getFile(), 300); // TODO
 	}
 }
