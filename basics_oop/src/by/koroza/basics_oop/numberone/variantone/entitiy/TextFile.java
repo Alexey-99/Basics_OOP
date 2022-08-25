@@ -28,4 +28,17 @@ public class TextFile {
 	public void setFile(File file) {
 		this.file = file;
 	}
+
+	public void delete() {
+		directory.delete();
+		file.delete();
+	}
+
+	public void deleteFile() {
+		file.delete();
+	}
+
+	public void deleteDirectory() {
+		directory.delete();
+	}
 }
