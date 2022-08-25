@@ -1,6 +1,8 @@
 package by.koroza.basics_oop.numberone.variantone.entitiy;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class TextFile {
 	private Directory directory;
@@ -47,10 +49,16 @@ public class TextFile {
 		}
 	}
 
-	public void printToConsole() { // TODO printToConsole()
-
+	public void printToConsole() throws FileNotFoundException {
+		String line = "";
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(file);
+		while (scan.hasNext()) {
+			line = scan.nextLine();
+			System.out.println(line);
+		}
 	}
-	
+
 	public void addText() { // TODO addText()
 
 	}
