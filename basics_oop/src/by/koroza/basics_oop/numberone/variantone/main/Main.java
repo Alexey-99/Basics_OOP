@@ -2,7 +2,7 @@
  * 
  * Методы: 
  * создать (file, derictory), +
- * переименовать (file, derictory), 
+ * переименовать (file, derictory), + 
  * вывести на консоль содержимое(file), 
  * дополнить (file, derictory), 
  * удалить. +
@@ -18,11 +18,11 @@ import by.koroza.basics_oop.numberone.variantone.entitiy.TextFile;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException { // TODO ПЕРЕДЕЛАТЬ
+	public static void main(String[] args) throws IOException {
 		Directory directoryMain = new Directory("resources");
 		Directory directoryFile = new Directory(directoryMain, "numberOne");
-		directoryFile.renameTo(directoryMain);
 		File file = new File(directoryFile, "textFile.txt");
 		TextFile textFile = new TextFile(directoryFile, file);
+
 	}
 }

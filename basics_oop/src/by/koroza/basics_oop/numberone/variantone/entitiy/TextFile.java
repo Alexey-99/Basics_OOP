@@ -29,6 +29,32 @@ public class TextFile {
 		this.file = file;
 	}
 
+	public void create(String path) throws IOException {
+		if (path.contains(".txt")) {
+			file = new File(path);
+			file.createNewFile();
+		} else {
+			directory = new Directory(path);
+			directory.mkdirs();
+		}
+	}
+
+	public void rename(String newName) {
+		if (newName.contains(".txt")) {
+			file.renameTo(new File(file.getParent() + "/" + newName));
+		} else {
+			directory.renameTo(new Directory(directory.getParent() + "/" + newName));
+		}
+	}
+
+	public void printToConsole() { // TODO printToConsole()
+
+	}
+	
+	public void addText() { // TODO addText()
+
+	}
+
 	public void delete() {
 		directory.delete();
 		file.delete();
