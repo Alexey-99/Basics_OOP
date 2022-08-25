@@ -1,13 +1,13 @@
 package by.koroza.basics_oop.numberone.variantone.entitiy;
 
 @SuppressWarnings("serial")
-public class Directory extends File {
+public class File extends java.io.File {
 
-	public Directory(java.io.File parent, String child) {
+	public File(java.io.File parent, String child) {
 		super(parent, child);
 	}
-	
-	public Directory(String child) {
+
+	public File(String child) {
 		super(child);
 	}
 }
