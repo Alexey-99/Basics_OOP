@@ -43,9 +43,20 @@ public class TextFile {
 
 	public void rename(String newName) {
 		if (newName.contains(".txt")) {
-			file.renameTo(new File(file.getParent() + "/" + newName));
+			File fileNewName = new File(file.getParent() + "/" + newName);
+			if (file.exists() == true) {
+				if (file.renameTo(fileNewName) == true) {
+					file = fileNewName;
+				}
+			}
 		} else {
-			directory.renameTo(new Directory(directory.getParent() + "/" + newName));
+			Directory directoryNewName = new Directory(directory.getParent() + "/" + newName);
+			if (directory.exists() == true) {
+				if (directory.renameTo(directoryNewName) == true) {
+					directory = directoryNewName;
+				}
+			}
+
 		}
 	}
 
