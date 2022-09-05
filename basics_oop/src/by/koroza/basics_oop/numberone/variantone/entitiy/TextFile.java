@@ -55,7 +55,8 @@ public class TextFile {
 
 	public void rename(String newName) {
 		if (newName.contains(".txt")) {
-			File fileNewName = new File(this.file.getParent() + "/" + newName);
+			String str = this.file.getParent();
+			File fileNewName = new File(this.directory.getParent() + "/" + newName);
 			if (this.file.exists() == true) {
 				if (this.file.renameTo(fileNewName) == true) {
 					this.file = fileNewName;
