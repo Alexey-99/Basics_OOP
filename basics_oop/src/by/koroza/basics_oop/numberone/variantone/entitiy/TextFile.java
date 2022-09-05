@@ -55,8 +55,8 @@ public class TextFile {
 
 	public void rename(String newName) {
 		if (newName.contains(".txt")) {
-			String str = this.file.getParent();
-			File fileNewName = new File(this.directory.getParent() + "/" + newName);
+			String str = this.directory.getPath();
+			File fileNewName = new File(this.directory.getPath() + "/" + newName);
 			if (this.file.exists() == true) {
 				if (this.file.renameTo(fileNewName) == true) {
 					this.file = fileNewName;
@@ -67,9 +67,10 @@ public class TextFile {
 			if (this.directory.exists() == true) {
 				if (this.directory.renameTo(directoryNewName) == true) {
 					this.directory = directoryNewName;
+					File fileNewPass = new File(this.directory.getPath() + "/" + this.file.getName());
+					this.file = fileNewPass;
 				}
 			}
-
 		}
 	}
 
