@@ -8,6 +8,8 @@ public class TextFile {
 	private Directory directory;
 	private File file;
 
+	private static final String MESSAGE_FILE_EMPTY = "This text file is empty.";
+
 	public TextFile(Directory directory, File file) throws IOException {
 		this.directory = directory;
 		this.directory.mkdirs();
@@ -61,12 +63,17 @@ public class TextFile {
 	}
 
 	public void printToConsole() throws FileNotFoundException {
+		int countLine = 0;
 		String line = "";
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(file);
 		while (scan.hasNext()) {
 			line = scan.nextLine();
 			System.out.println(line);
+			countLine++;
+		}
+		if (countLine == 0) {
+			System.out.println(MESSAGE_FILE_EMPTY);
 		}
 	}
 

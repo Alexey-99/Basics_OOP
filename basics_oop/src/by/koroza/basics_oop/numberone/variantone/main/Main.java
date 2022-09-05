@@ -21,20 +21,15 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Directory directoryMain = new Directory("resources");
 		Directory directoryFile = new Directory(directoryMain, "numberOne");
-		File file1 = new File(directoryFile, "textFile1.txt");
-		TextFile textFile1 = new TextFile(directoryFile, file1);
-		// textFile.create("one");
-		// textFile.create("one.txt");
-		textFile1.rename("text.txt");
-		//textFile.rename("textfile.txt");
+		File file = new File(directoryFile, "textFile.txt");
+		TextFile textFile = new TextFile(directoryFile, file);
+		
+		textFile.create("one");
+		textFile.create("one.txt");
+		
+		textFile.rename("numberOneRename");
+		textFile.rename("textFileRename.txt");
 		
 		
-		File file2 = new File(directoryFile, "textFile1.txt");
-		TextFile textFile2 = new TextFile(directoryFile, file2);
-		
-		
-		File file3 = new File(directoryFile, "textFile3.txt");
-		TextFile textFile3 = new TextFile(directoryFile, file3);
-		textFile3.rename("textfile.txt");
 	}
 }
