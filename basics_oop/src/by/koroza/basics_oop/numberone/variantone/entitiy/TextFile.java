@@ -48,7 +48,7 @@ public class TextFile {
 			file = new File(parent, child);
 			file.createNewFile();
 		} else {
-			directory = new Directory(child);
+			directory = new Directory(parent, child);
 			directory.mkdirs();
 		}
 	}
