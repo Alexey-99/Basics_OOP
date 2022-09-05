@@ -24,8 +24,11 @@ public class Main {
 		File file = new File(directoryFile, "textFile.txt");
 		TextFile textFile = new TextFile(directoryFile, file);
 		
-		textFile.create("one");
-		textFile.create("one.txt");
+		textFile.create("numberOneNew1");
+		textFile.create("textFileNew1.txt");
+		
+		textFile.create(directoryFile, "numberOneNew2");
+		textFile.create(directoryFile, "textFileNew2.txt");
 		
 		textFile.rename("numberOneRename");
 		textFile.rename("textFileRename.txt");

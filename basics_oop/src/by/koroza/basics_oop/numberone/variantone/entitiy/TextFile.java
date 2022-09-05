@@ -43,6 +43,16 @@ public class TextFile {
 		}
 	}
 
+	public void create(java.io.File parent, String child) throws IOException {
+		if (child.contains(".txt")) {
+			file = new File(parent, child);
+			file.createNewFile();
+		} else {
+			directory = new Directory(child);
+			directory.mkdirs();
+		}
+	}
+
 	public void rename(String newName) {
 		if (newName.contains(".txt")) {
 			File fileNewName = new File(file.getParent() + "/" + newName);
