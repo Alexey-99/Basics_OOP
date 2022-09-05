@@ -1,8 +1,8 @@
-package by.koroza.basics_oop.numbertwo.variantone.validation;
+package by.koroza.basics_oop.numbertwo.validation;
 
 import java.util.regex.Pattern;
 
-import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
+import by.koroza.basics_oop.numbertwo.entity.Person;
 
 public class Validation {
 	private static final String REG_EXR_FOR_LASTNAME_FIRSTNAME_PATRONYMIC = "[A-Z]{1}[a-z]+";

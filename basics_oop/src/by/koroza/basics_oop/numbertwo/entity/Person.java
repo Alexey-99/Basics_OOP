@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numbertwo.variantone.entity;
+package by.koroza.basics_oop.numbertwo.entity;
 
 public class Person {
 	private static int count = 1;

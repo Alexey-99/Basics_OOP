@@ -1,9 +1,9 @@
-package by.koroza.basics_oop.numbertwo.variantone.main.process.operations;
+package by.koroza.basics_oop.numbertwo.main.process.operations;
 
 import java.util.Scanner;
 
-import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
-import by.koroza.basics_oop.numbertwo.variantone.validation.Validation;
+import by.koroza.basics_oop.numbertwo.entity.Person;
+import by.koroza.basics_oop.numbertwo.validation.Validation;
 
 public class SelectionProductsForBuy {
 	private static final boolean STATUS_RESERVED = false;

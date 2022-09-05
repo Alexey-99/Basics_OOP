@@ -1,9 +1,9 @@
-package by.koroza.basics_oop.numbertwo.variantone.main.process;
+package by.koroza.basics_oop.numbertwo.main.process;
 
-import by.koroza.basics_oop.numbertwo.variantone.entity.Person;
-import by.koroza.basics_oop.numbertwo.variantone.main.process.operations.CreationSalesmanAndCuctomer;
-import by.koroza.basics_oop.numbertwo.variantone.main.process.operations.Payment;
-import by.koroza.basics_oop.numbertwo.variantone.main.process.operations.SelectionProductsForBuy;
+import by.koroza.basics_oop.numbertwo.entity.Person;
+import by.koroza.basics_oop.numbertwo.main.process.operations.CreationSalesmanAndCuctomer;
+import by.koroza.basics_oop.numbertwo.main.process.operations.Payment;
+import by.koroza.basics_oop.numbertwo.main.process.operations.SelectionProductsForBuy;
 
 public class ProgramProcess {
 	private static final String MESSAGE_LIST_PRODUCT_FOR_BUY = "The list of goods that can be bought";
