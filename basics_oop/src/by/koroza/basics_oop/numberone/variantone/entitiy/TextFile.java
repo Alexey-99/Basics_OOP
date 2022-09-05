@@ -89,8 +89,10 @@ public class TextFile {
 		}
 	}
 
-	public void addText() throws FileNotFoundException { // TODO addText()
+	public void addText(String line) throws FileNotFoundException { // TODO addText()
 		PrintWriter pw = new PrintWriter(this.file);
+		pw.println(line);
+		pw.close();
 	}
 
 	public void delete() {
