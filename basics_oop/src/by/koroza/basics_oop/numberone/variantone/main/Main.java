@@ -27,11 +27,16 @@ public class Main {
 		textFile.create("numberOneNew1");
 		textFile.create("textFileNew1.txt");
 		
+		textFile.deleteDirectory();
+		textFile.deleteFile();
+		
 		textFile.create(directoryFile, "numberOneNew2");
 		textFile.create(directoryFile, "textFileNew2.txt");
 		
-		textFile.rename("numberOneRename");
-		textFile.rename("textFileRename.txt");
+		textFile.rename("numberOne2Rename");
+		textFile.rename("textFileNew2Rename.txt");
+		
+		textFile.printToConsole();
 		
 		
 	}
