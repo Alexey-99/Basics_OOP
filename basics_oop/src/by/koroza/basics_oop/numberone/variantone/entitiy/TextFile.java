@@ -2,6 +2,7 @@ package by.koroza.basics_oop.numberone.variantone.entitiy;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class TextFile {
@@ -55,7 +56,6 @@ public class TextFile {
 
 	public void rename(String newName) {
 		if (newName.contains(".txt")) {
-			String str = this.directory.getPath();
 			File fileNewName = new File(this.directory.getPath() + "/" + newName);
 			if (this.file.exists() == true) {
 				if (this.file.renameTo(fileNewName) == true) {
@@ -89,8 +89,8 @@ public class TextFile {
 		}
 	}
 
-	public void addText() { // TODO addText()
-
+	public void addText() throws FileNotFoundException { // TODO addText()
+		PrintWriter pw = new PrintWriter(this.file);
 	}
 
 	public void delete() {
