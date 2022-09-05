@@ -35,37 +35,37 @@ public class TextFile {
 
 	public void create(String path) throws IOException {
 		if (path.contains(".txt")) {
-			file = new File(path);
-			file.createNewFile();
+			this.file = new File(path);
+			this.file.createNewFile();
 		} else {
-			directory = new Directory(path);
-			directory.mkdirs();
+			this.directory = new Directory(path);
+			this.directory.mkdirs();
 		}
 	}
 
 	public void create(java.io.File parent, String child) throws IOException {
 		if (child.contains(".txt")) {
-			file = new File(parent, child);
-			file.createNewFile();
+			this.file = new File(parent, child);
+			this.file.createNewFile();
 		} else {
-			directory = new Directory(parent, child);
-			directory.mkdirs();
+			this.directory = new Directory(parent, child);
+			this.directory.mkdirs();
 		}
 	}
 
 	public void rename(String newName) {
 		if (newName.contains(".txt")) {
-			File fileNewName = new File(file.getParent() + "/" + newName);
-			if (file.exists() == true) {
-				if (file.renameTo(fileNewName) == true) {
-					file = fileNewName;
+			File fileNewName = new File(this.file.getParent() + "/" + newName);
+			if (this.file.exists() == true) {
+				if (this.file.renameTo(fileNewName) == true) {
+					this.file = fileNewName;
 				}
 			}
 		} else {
-			Directory directoryNewName = new Directory(directory.getParent() + "/" + newName);
-			if (directory.exists() == true) {
-				if (directory.renameTo(directoryNewName) == true) {
-					directory = directoryNewName;
+			Directory directoryNewName = new Directory(this.directory.getParent() + "/" + newName);
+			if (this.directory.exists() == true) {
+				if (this.directory.renameTo(directoryNewName) == true) {
+					this.directory = directoryNewName;
 				}
 			}
 
@@ -76,7 +76,7 @@ public class TextFile {
 		int countLine = 0;
 		String line = "";
 		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(file);
+		Scanner scan = new Scanner(this.file);
 		while (scan.hasNext()) {
 			line = scan.nextLine();
 			System.out.println(line);
@@ -92,15 +92,15 @@ public class TextFile {
 	}
 
 	public void delete() {
-		directory.delete();
-		file.delete();
+		this.directory.delete();
+		this.file.delete();
 	}
 
 	public void deleteFile() {
-		file.delete();
+		this.file.delete();
 	}
 
 	public void deleteDirectory() {
-		directory.delete();
+		this.directory.delete();
 	}
 }

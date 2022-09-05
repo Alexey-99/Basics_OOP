@@ -31,7 +31,7 @@ public class Main {
 		textFile.deleteFile();
 		
 		textFile.create(directoryFile, "numberOneNew2");
-		textFile.create(directoryFile, "textFileNew2.txt");
+		textFile.create(textFile.getDirectory(), "textFileNew2.txt");
 		
 		textFile.rename("numberOne2Rename");
 		textFile.rename("textFileNew2Rename.txt");
