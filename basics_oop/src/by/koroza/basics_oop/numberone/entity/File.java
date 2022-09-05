@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberone.variantone.entitiy;
+package by.koroza.basics_oop.numberone.entity;
 
 @SuppressWarnings("serial")
 public class File extends java.io.File {

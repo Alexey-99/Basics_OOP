@@ -8,13 +8,13 @@
  * удалить. +
  * */
 
-package by.koroza.basics_oop.numberone.variantone.main;
+package by.koroza.basics_oop.numberone.main;
 
 import java.io.IOException;
 
-import by.koroza.basics_oop.numberone.variantone.entitiy.Directory;
-import by.koroza.basics_oop.numberone.variantone.entitiy.File;
-import by.koroza.basics_oop.numberone.variantone.entitiy.TextFile;
+import by.koroza.basics_oop.numberone.entity.Directory;
+import by.koroza.basics_oop.numberone.entity.File;
+import by.koroza.basics_oop.numberone.entity.TextFile;
 
 public class Main {
 

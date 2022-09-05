@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberone.variantone.entitiy;
+package by.koroza.basics_oop.numberone.entity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
