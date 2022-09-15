@@ -47,7 +47,6 @@ public class Main {
 		textFile.rename("textFileNew2Rename.txt");
 
 		textFile.addText(TEXT);
-
 		textFile.addText(TEXT);
 
 		textFile.printToConsole();
