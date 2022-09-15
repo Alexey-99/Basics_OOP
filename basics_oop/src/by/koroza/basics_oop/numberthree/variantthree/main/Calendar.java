@@ -27,9 +27,11 @@ public class Calendar {
 	}
 
 	public void printWeekendsAndHolidays(LocalDate dateStart, LocalDate dateFinish) {
+		int i = 0;
 		for (LocalDate day = dateStart; !day.isAfter(dateFinish); day = day.plusDays(1)) {
 			if ((this.validation.isHoliday(day) == true) || this.validation.isWeekend(day) == true) {
-
+				System.out.println(i + ") " + day + " - " + day.getDayOfWeek());
+				i++;
 			}
 		}
 	}
@@ -39,7 +41,7 @@ public class Calendar {
 		public boolean isWeekend(LocalDate date) {
 			boolean isWeekend = false;
 			DayOfWeek dayOfWeek = date.getDayOfWeek();
-			if (dayOfWeek == DayOfWeek.SATURDAY) {
+			if (dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY) {
 				isWeekend = true;
 			}
 			return isWeekend;
