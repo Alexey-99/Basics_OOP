@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberthree.main;
+package by.koroza.basics_oop.numberthree;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

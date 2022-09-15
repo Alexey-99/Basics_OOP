@@ -2,7 +2,7 @@
    с помощью объектов которого можно хранить информацию о выходных и праздничных днях.
 */
 
-package by.koroza.basics_oop.numberthree.main;
+package by.koroza.basics_oop.numberthree;
 
 import java.time.LocalDate;
 import java.time.Month;
