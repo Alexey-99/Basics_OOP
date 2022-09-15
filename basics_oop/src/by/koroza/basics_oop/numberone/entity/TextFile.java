@@ -1,8 +1,8 @@
 package by.koroza.basics_oop.numberone.entity;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class TextFile {
@@ -89,10 +89,10 @@ public class TextFile {
 		}
 	}
 
-	public void addText(String line) throws FileNotFoundException { 
-		PrintWriter pw = new PrintWriter(this.file);
-		pw.println(line);
-		pw.close();
+	public void addText(String text) throws IOException {
+		FileWriter fw = new FileWriter(this.file, true);
+		fw.write(text);
+		fw.close();
 	}
 
 	public void delete() {
