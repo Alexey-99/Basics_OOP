@@ -1,17 +1,26 @@
+/* Создать класс Календарь с внутренним классом, 
+   с помощью объектов которого можно хранить информацию о выходных и праздничных днях.
+*/
+
 package by.koroza.basics_oop.numberthree.variantthree.main;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.Month;
 
 public class Main {
 
 	public static void main(String[] args) {
-		GregorianCalendar cannes = new GregorianCalendar(216, Calendar.AUGUST, 2);
-		cannes.set(Calendar.ERA, GregorianCalendar.BC);
-
-		DateFormat df = new SimpleDateFormat("dd MMM yyy GG");
-		System.out.println(df.format(cannes.getTime()));
+		Calendar calendar = new Calendar();
+		
+		calendar.addHolidays(LocalDate.of(2022, Month.JANUARY, 1));
+		calendar.addHolidays(LocalDate.of(2022, Month.JANUARY, 2));
+		calendar.addHolidays(LocalDate.of(2022, Month.JANUARY, 7));
+		calendar.addHolidays(LocalDate.of(2022, Month.MARCH, 8));
+		calendar.addHolidays(LocalDate.of(2022, Month.MAY, 1));
+		calendar.addHolidays(LocalDate.of(2022, Month.MAY, 3));
+		calendar.addHolidays(LocalDate.of(2022, Month.MAY, 9));
+		calendar.addHolidays(LocalDate.of(2022, Month.JULY, 3));
+		calendar.addHolidays(LocalDate.of(2022, Month.NOVEMBER, 7));
+		calendar.addHolidays(LocalDate.of(2022, Month.DECEMBER, 25));
 	}
 }
