@@ -8,6 +8,7 @@ import java.util.List;
 public class Calendar {
 	private List<LocalDate> holidays;
 	private Validation validation;
+	private static final String LINE_WEEKENDS_AND_HOLIDAYS = "Total weekends and holidays: ";
 
 	public Calendar() {
 		this.holidays = new ArrayList<LocalDate>();
@@ -28,6 +29,7 @@ public class Calendar {
 
 	public void printWeekendsAndHolidays(LocalDate dateStart, LocalDate dateFinish) {
 		int i = 0;
+		System.out.println(LINE_WEEKENDS_AND_HOLIDAYS);
 		for (LocalDate day = dateStart; !day.isAfter(dateFinish); day = day.plusDays(1)) {
 			if ((this.validation.isHoliday(day) == true) || this.validation.isWeekend(day) == true) {
 				System.out.println(i + ") " + day + " - " + day.getDayOfWeek());
