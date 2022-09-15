@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Calendar calendar = new Calendar();
-		
+
 		calendar.addHolidays(LocalDate.of(2022, Month.JANUARY, 1));
 		calendar.addHolidays(LocalDate.of(2022, Month.JANUARY, 2));
 		calendar.addHolidays(LocalDate.of(2022, Month.JANUARY, 7));
@@ -22,5 +22,7 @@ public class Main {
 		calendar.addHolidays(LocalDate.of(2022, Month.JULY, 3));
 		calendar.addHolidays(LocalDate.of(2022, Month.NOVEMBER, 7));
 		calendar.addHolidays(LocalDate.of(2022, Month.DECEMBER, 25));
+
+		calendar.printWeekendsAndHolidays(LocalDate.of(2022, Month.MARCH, 1), LocalDate.of(2022, Month.JULY, 31));
 	}
 }

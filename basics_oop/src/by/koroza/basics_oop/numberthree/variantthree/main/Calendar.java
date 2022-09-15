@@ -22,4 +22,15 @@ public class Calendar {
 	public void addHolidays(LocalDate holiday) {
 		this.holidays.add(holiday);
 	}
+
+	public void printWeekendsAndHolidays(LocalDate dateStart, LocalDate dateFinish) {
+		for (LocalDate i = dateStart; !i.isAfter(dateFinish); i = i.plusDays(1)) {
+
+		}
+	}
+
+	private class Validation{
+		
+		public
+	}
 }
