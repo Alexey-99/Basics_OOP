@@ -19,8 +19,12 @@ import by.koroza.basics_oop.numberfive.flowercomposition.database.DatabaseReplen
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
+		databaseReplenishment();
+		
+	}
+	
+	private static void databaseReplenishment() {
 		DatabaseReplenishment.databaseReplenishment();
-
 	}
 
 	
