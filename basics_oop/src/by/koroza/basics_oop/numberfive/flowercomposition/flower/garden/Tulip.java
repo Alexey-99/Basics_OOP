@@ -7,7 +7,7 @@ public class Tulip {
 	private static final String LINE_PRICE = "Price: ";
 
 	public Tulip() {
-		this.price = 8;
+		this.price = 9;
 	}
 
 	public Tulip(double price) {
