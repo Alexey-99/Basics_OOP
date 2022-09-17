@@ -1,16 +1,16 @@
-package by.koroza.basics_oop.numberfive.flowercomposition.flower.garden;
+package by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.garden;
 
-public class LilyOfTheValley {
-	private static String name = "lily of the valley";
+public class Tulip {
+	private static String name = "tulip";
 	private double price;
 	private static final String LINE_NAME = "Name: ";
 	private static final String LINE_PRICE = "Price: ";
 
-	public LilyOfTheValley() {
-		this.price = 6;
+	public Tulip() {
+		this.price = 9;
 	}
 
-	public LilyOfTheValley(double price) {
+	public Tulip(double price) {
 		this.price = price;
 	}
 
@@ -19,7 +19,7 @@ public class LilyOfTheValley {
 	}
 
 	public static void setName(String name) {
-		LilyOfTheValley.name = name;
+		Tulip.name = name;
 	}
 
 	public double getPrice() {
@@ -52,8 +52,8 @@ public class LilyOfTheValley {
 		if (!getClass().equals(object.getClass())) {
 			return false;
 		}
-		LilyOfTheValley lilyOfTheValley = (LilyOfTheValley) object;
-		if (price != lilyOfTheValley.price) {
+		Tulip tulip = (Tulip) object;
+		if (price != tulip.price) {
 			return false;
 		}
 		return true;

@@ -1,4 +1,4 @@
-package by.koroza.basics_oop.numberfive.flowercomposition.flower.garden;
+package by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.garden;
 
 public class Peony {
 	private static String name = "peony";

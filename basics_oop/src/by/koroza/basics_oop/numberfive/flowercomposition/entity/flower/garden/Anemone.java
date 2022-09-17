@@ -1,16 +1,16 @@
-package by.koroza.basics_oop.numberfive.flowercomposition.flower.garden;
+package by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.garden;
 
-public class Tulip {
-	private static String name = "tulip";
+public class Anemone {
+	private static String name = "anemone";
 	private double price;
 	private static final String LINE_NAME = "Name: ";
 	private static final String LINE_PRICE = "Price: ";
 
-	public Tulip() {
-		this.price = 9;
+	public Anemone() {
+		this.price = 2;
 	}
 
-	public Tulip(double price) {
+	public Anemone(double price) {
 		this.price = price;
 	}
 
@@ -19,7 +19,7 @@ public class Tulip {
 	}
 
 	public static void setName(String name) {
-		Tulip.name = name;
+		Anemone.name = name;
 	}
 
 	public double getPrice() {
@@ -52,8 +52,8 @@ public class Tulip {
 		if (!getClass().equals(object.getClass())) {
 			return false;
 		}
-		Tulip tulip = (Tulip) object;
-		if (price != tulip.price) {
+		Anemone anemone = (Anemone) object;
+		if (price != anemone.price) {
 			return false;
 		}
 		return true;

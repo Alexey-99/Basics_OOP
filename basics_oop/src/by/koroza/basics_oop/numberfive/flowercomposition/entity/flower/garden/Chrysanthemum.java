@@ -1,16 +1,16 @@
-package by.koroza.basics_oop.numberfive.flowercomposition.flower.garden;
+package by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.garden;
 
-public class Alstroemeria {
-	private static String name = "alstroemeria";
+public class Chrysanthemum {
+	private static String name = "chrysanthemum";
 	private double price;
 	private static final String LINE_NAME = "Name: ";
 	private static final String LINE_PRICE = "Price: ";
-	
-	public Alstroemeria() {
-		 this.price = 1;
+
+	public Chrysanthemum() {
+		this.price = 4;
 	}
-	
-	public Alstroemeria(double price) {
+
+	public Chrysanthemum(double price) {
 		this.price = price;
 	}
 
@@ -19,7 +19,7 @@ public class Alstroemeria {
 	}
 
 	public static void setName(String name) {
-		Alstroemeria.name = name;
+		Chrysanthemum.name = name;
 	}
 
 	public double getPrice() {
@@ -52,15 +52,15 @@ public class Alstroemeria {
 		if (!getClass().equals(object.getClass())) {
 			return false;
 		}
-		Alstroemeria alstroemeria = (Alstroemeria) object;
-		if (price != alstroemeria.price) {
+		Chrysanthemum chrysanthemum = (Chrysanthemum) object;
+		if (price != chrysanthemum.price) {
 			return false;
 		}
 		return true;
 	}
 
 	@Override
-	public String toString() { 
+	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(LINE_NAME).append(name);
 		builder.append(LINE_PRICE).append(price);

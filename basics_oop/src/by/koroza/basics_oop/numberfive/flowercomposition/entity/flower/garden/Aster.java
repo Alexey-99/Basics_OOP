@@ -1,16 +1,16 @@
-package by.koroza.basics_oop.numberfive.flowercomposition.flower.garden;
+package by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.garden;
 
-public class Anemone {
-	private static String name = "anemone";
+public class Aster {
+	private static String name = "aster";
 	private double price;
 	private static final String LINE_NAME = "Name: ";
 	private static final String LINE_PRICE = "Price: ";
 
-	public Anemone() {
-		this.price = 2;
+	public Aster() {
+		this.price = 3;
 	}
 
-	public Anemone(double price) {
+	public Aster(double price) {
 		this.price = price;
 	}
 
@@ -19,7 +19,7 @@ public class Anemone {
 	}
 
 	public static void setName(String name) {
-		Anemone.name = name;
+		Aster.name = name;
 	}
 
 	public double getPrice() {
@@ -52,8 +52,8 @@ public class Anemone {
 		if (!getClass().equals(object.getClass())) {
 			return false;
 		}
-		Anemone anemone = (Anemone) object;
-		if (price != anemone.price) {
+		Aster aster = (Aster) object;
+		if (price != aster.price) {
 			return false;
 		}
 		return true;
