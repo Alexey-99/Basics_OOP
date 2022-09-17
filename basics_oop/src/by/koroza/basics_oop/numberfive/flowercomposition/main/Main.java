@@ -14,9 +14,14 @@
 
 package by.koroza.basics_oop.numberfive.flowercomposition.main;
 
+import by.koroza.basics_oop.numberfive.flowercomposition.database.DatabaseReplenishment;
+
 public class Main {
-	
+
 	public static void main(String[] args) throws InterruptedException {
-		
+		DatabaseReplenishment.databaseReplenishment();
+
 	}
+
+	
 }
