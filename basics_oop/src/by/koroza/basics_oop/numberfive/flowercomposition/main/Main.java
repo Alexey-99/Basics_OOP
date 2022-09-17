@@ -15,7 +15,7 @@
 package by.koroza.basics_oop.numberfive.flowercomposition.main;
 
 import by.koroza.basics_oop.numberfive.flowercomposition.database.DatabaseReplenishment;
-import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.SelectionFlowers;
+import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.Bouquet;
 
 public class Main {
 
@@ -26,7 +26,7 @@ public class Main {
 	
 	private static void databaseReplenishment() {
 		DatabaseReplenishment.databaseReplenishment();
-		SelectionFlowers.selectionFlowers();
+		Bouquet.selectionFlowers();
 	}
 
 	
