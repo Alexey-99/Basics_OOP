@@ -12,12 +12,12 @@
    Составляющими цветочной композиции являются цветы и упаковка. 
 */
 
-package by.koroza.basics_oop.numberfive.a.main;
+package by.koroza.basics_oop.numberfive.flowercomposition.main;
 
 public class Main {
-
-	public static void main(String[] args) {
-
+	
+	public static void main(String[] args) throws InterruptedException {
+		Thread.sleep(2000);
 	}
 
 }

@@ -12,7 +12,7 @@
    Составляющими целого подарка являются сладости и упаковка. 
 */
 
-package by.koroza.basics_oop.numberfive.b.main;
+package by.koroza.basics_oop.numberfive.present.main;
 
 public class Main {
 
