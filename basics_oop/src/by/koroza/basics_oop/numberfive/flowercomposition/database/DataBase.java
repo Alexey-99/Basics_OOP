@@ -30,4 +30,10 @@ public class DataBase {
 	public static void addpackagingType(String type) {
 		DataBase.packagingTypes.add(type);
 	}
+
+	public static void printFlowerNames() {
+		for (int i = 0; i < flowerNames.size(); i++) {
+			System.out.println(i + " - " + flowerNames.get(i));
+		}
+	}
 }
