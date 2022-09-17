@@ -5,6 +5,8 @@ import java.util.List;
 
 public class DataBase {
 	private static List<String> flowerNames = new ArrayList<>();
+	private static List<Object> flowers = new ArrayList<>(); // TODO
+	
 	private static List<String> packagingTypes = new ArrayList<>();
 
 	public static List<String> getFlowerNames() {
