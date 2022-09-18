@@ -9,7 +9,6 @@ public class FlowerComposition {
 	private static final String MESSAGE_YOU_MADE_BOUQUET = "You made a bouquet of the following flowers: ";
 	private static final String MESSAGE_YOU_CHOSEN_PACKAGING = "You have chosen the following packaging for flowers: ";
 	private static final String MESSAGE_YOU_NOT_CHOSEN_PACKAGING = "You have not selected flower packaging.";
-	
 	private static final String MESSAGE_COST_FLOWERS = "Cost of the flowers: ";
 	private static final String MESSAGE_COST_PACKAGING = "Cost of the packaging: ";
 	private static final String MESSAGE_COST_FLOWER_COMPASITION = "Cost of the flower compasition: ";
