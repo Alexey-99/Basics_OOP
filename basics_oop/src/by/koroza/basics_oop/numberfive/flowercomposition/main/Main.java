@@ -16,18 +16,18 @@ package by.koroza.basics_oop.numberfive.flowercomposition.main;
 
 import by.koroza.basics_oop.numberfive.flowercomposition.database.DatabaseReplenishment;
 import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.CreateBouquet;
+import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.FlowerComposition;
 
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 		databaseReplenishment();
-		CreateBouquet.selectionFlowers();
-		
+		FlowerComposition.createFlowerComposition();
+
 	}
-	
+
 	private static void databaseReplenishment() {
 		DatabaseReplenishment.databaseReplenishment();
 	}
 
-	
 }
