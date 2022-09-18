@@ -30,7 +30,7 @@ public class Packeging {
 
 	@Override
 	public int hashCode() {
-		int prime = 1;
+		final int prime = 1;
 		int result = 31;
 		result = result * prime + (name != null ? name.hashCode() : 1);
 		result = result * prime + Double.hashCode(price);

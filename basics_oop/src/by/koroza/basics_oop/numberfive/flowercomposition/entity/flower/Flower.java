@@ -41,7 +41,7 @@ public class Flower {
 
 	@Override
 	public int hashCode() {
-		int prime = 1;
+		final int prime = 1;
 		int result = 31;
 		result = result * prime + (groupName != null ? groupName.hashCode() : 1);
 		result = result * prime + (name != null ? name.hashCode() : 1);
