@@ -6,6 +6,7 @@ public class Flower {
 	private double price;
 	private static final String LINE_NAME = "Name: ";
 	private static final String LINE_PRICE = "Price: ";
+	private static final String LINE_GROUP_FLOWER = "Group of flower: ";
 	private static final String OPERATION_NEXT_LINE = "\n";
 
 	public Flower(String groupName, String name, double price) {
@@ -47,6 +48,8 @@ public class Flower {
 		result = result * prime + Double.hashCode(price);
 		result = result * prime + (LINE_NAME != null ? LINE_NAME.hashCode() : 1);
 		result = result * prime + (LINE_PRICE != null ? LINE_PRICE.hashCode() : 1);
+		result = result * prime + (LINE_GROUP_FLOWER != null ? LINE_GROUP_FLOWER.hashCode() : 1);
+		result = result * prime + (OPERATION_NEXT_LINE != null ? OPERATION_NEXT_LINE.hashCode() : 1);
 		return result;
 	}
 
@@ -71,7 +74,7 @@ public class Flower {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Group of flower: ").append(groupName).append(OPERATION_NEXT_LINE);
+		builder.append(LINE_GROUP_FLOWER).append(groupName).append(OPERATION_NEXT_LINE);
 		builder.append(LINE_NAME).append(name).append(OPERATION_NEXT_LINE);
 		builder.append(LINE_PRICE).append(price);
 		return builder.toString();

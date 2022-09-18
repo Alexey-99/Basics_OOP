@@ -15,7 +15,6 @@
 package by.koroza.basics_oop.numberfive.flowercomposition.main;
 
 import by.koroza.basics_oop.numberfive.flowercomposition.database.DatabaseReplenishment;
-import by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.Flower;
 import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.Bouquet;
 
 public class Main {
