@@ -29,7 +29,7 @@ public class SelectionPackaging {
 		int numberPackaging = 0;
 		String number = "";
 		do {
-			System.out.println(MESSAGE_ENTER_NUMBER_PACKAGING + DataBase.getPackagings().size());
+			System.out.println(MESSAGE_ENTER_NUMBER_PACKAGING + getPackagings().size());
 			number = scan.nextLine();
 		} while (Validation.validationEnterNumberPackaging(number) == false);
 		numberPackaging = parseInt(number);
