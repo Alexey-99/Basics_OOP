@@ -15,13 +15,13 @@
 package by.koroza.basics_oop.numberfive.flowercomposition.main;
 
 import by.koroza.basics_oop.numberfive.flowercomposition.database.DatabaseReplenishment;
-import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.Bouquet;
+import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.CreateBouquet;
 
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 		databaseReplenishment();
-		Bouquet.selectionFlowers();
+		CreateBouquet.selectionFlowers();
 		
 	}
 	

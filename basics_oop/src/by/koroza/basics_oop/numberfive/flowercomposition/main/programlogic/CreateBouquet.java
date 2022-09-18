@@ -8,7 +8,7 @@ import by.koroza.basics_oop.numberfive.flowercomposition.database.DataBase;
 import by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.Flower;
 import by.koroza.basics_oop.numberfive.flowercomposition.validation.Validation;
 
-public class Bouquet {
+public class CreateBouquet {
 	private static List<Flower> flowers = new ArrayList<>();
 	private static final String MESSAGE_CHOOSE_FLOWER = "Good afternoon! Choose the flowers you want in the bouquet.";
 	private static final String MESSAGE_ENTER_NUMBER_FLOWER = "Enter the number of the flower you want in the bouquet or if you want to exit enter - ";
@@ -21,7 +21,7 @@ public class Bouquet {
 	}
 
 	public static void setFlowers(List<Flower> flowers) {
-		Bouquet.flowers = flowers;
+		CreateBouquet.flowers = flowers;
 	}
 
 	public static void selectionFlowers() {
