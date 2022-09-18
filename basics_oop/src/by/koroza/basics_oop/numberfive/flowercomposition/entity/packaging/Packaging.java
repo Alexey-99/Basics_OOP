@@ -1,13 +1,13 @@
 package by.koroza.basics_oop.numberfive.flowercomposition.entity.packaging;
 
-public class Packeging {
+public class Packaging {
 	private String type;
 	private double price;
 	private static final String LINE_TYPE = "Type: ";
 	private static final String LINE_PRICE = "Price: ";
 	private static final String OPERATION_NEXT_LINE = "\n";
 
-	public Packeging(String type, double price) {
+	public Packaging(String type, double price) {
 		this.type = type;
 		this.price = price;
 	}
@@ -51,7 +51,7 @@ public class Packeging {
 		if (!getClass().equals(object.getClass())) {
 			return false;
 		}
-		Packeging packeging = (Packeging) object;
+		Packaging packeging = (Packaging) object;
 		if (type == null) {
 			if (packeging.type != null) {
 				return false;

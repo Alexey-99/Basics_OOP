@@ -1,10 +1,10 @@
 package by.koroza.basics_oop.numberfive.flowercomposition.database;
 
 import static by.koroza.basics_oop.numberfive.flowercomposition.database.DataBase.addFlower;
-import static by.koroza.basics_oop.numberfive.flowercomposition.database.DataBase.addpackagingType;
+import static by.koroza.basics_oop.numberfive.flowercomposition.database.DataBase.addPackaging;
 
 import by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.Flower;
-import by.koroza.basics_oop.numberfive.flowercomposition.entity.packaging.Packeging;;
+import by.koroza.basics_oop.numberfive.flowercomposition.entity.packaging.Packaging;
 
 public class DatabaseReplenishment {
 
@@ -26,11 +26,10 @@ public class DatabaseReplenishment {
 	}
 
 	private static void replenishmentPackagingTypess() {
-		addpackagingType(new Packeging("Grid", 2));
-		addpackagingType("Paper");
-		addpackagingType("Felt");
-		addpackagingType("Hat box");
-		addpackagingType("Frame");
+		addPackaging(new Packaging("Grid", 2));
+		addPackaging(new Packaging("Paper", 4));
+		addPackaging(new Packaging("Felt", 6));
+		addPackaging(new Packaging("Hat box", 8));
+		addPackaging(new Packaging("Frame", 10));
 	}
-
 }

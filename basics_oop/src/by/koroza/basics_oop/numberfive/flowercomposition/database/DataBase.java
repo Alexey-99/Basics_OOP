@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.Flower;
-import by.koroza.basics_oop.numberfive.flowercomposition.entity.packaging.Packeging;
+import by.koroza.basics_oop.numberfive.flowercomposition.entity.packaging.Packaging;
+
 
 public class DataBase {
 	// private static List<String> flowerNames = new ArrayList<>();
 	private static List<Flower> flowers = new ArrayList<>();
-	private static List<Packeging> packagings = new ArrayList<>();
+	private static List<Packaging> packagings = new ArrayList<>();
 
 //	public static List<String> getFlowerNames() {
 //		return flowerNames;
@@ -53,11 +54,11 @@ public class DataBase {
 		DataBase.flowers = flowers;
 	}
 
-	public static List<Packeging> getPackagings() {
+	public static List<Packaging> getPackagings() {
 		return packagings;
 	}
 
-	public static void setPackagings(List<Packeging> packagings) {
+	public static void setPackagings(List<Packaging> packagings) {
 		DataBase.packagings = packagings;
 	}
 
@@ -65,8 +66,8 @@ public class DataBase {
 		DataBase.flowers.add(flower);
 	}
 
-	public static void addPackaging(Packeging packeging) {
-		DataBase.packagings.add(packeging);
+	public static void addPackaging(Packaging packaging) {
+		DataBase.packagings.add(packaging);
 	}
 
 	public static void printFlowerNames() {
@@ -75,7 +76,7 @@ public class DataBase {
 		}
 	}
 
-	public static void printPackegingTypes() {
+	public static void printPackagingTypes() {
 		for (int i = 0; i < packagings.size(); i++) {
 			System.out.println(i + " - " + packagings.get(i).getType());
 		}
