@@ -9,7 +9,7 @@ import by.koroza.basics_oop.numberfive.flowercomposition.validation.Validation;
 import static by.koroza.basics_oop.numberfive.flowercomposition.database.DataBase.getPackagings;
 
 public class SelectionPackaging {
-	private static final String MESSAGE_WANT_CHOOSE_PACKAGING = "Would you like to choose a packaging?";
+	private static final String MESSAGE_WANT_CHOOSE_PACKAGING = "Would you like to choose a packaging? Yes - 0, No - 1";
 	private static final String MESSAGE_ENTER_NUMBER_PACKAGING = "If you need packaging for a bouquet, enter the packaging number, if not, enter - ";
 	private static final String CODE_ANSWER_YES = "0";
 
