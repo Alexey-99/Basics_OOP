@@ -9,11 +9,11 @@ import by.koroza.basics_oop.numberfive.flowercomposition.entity.packaging.Packag
 public class DatabaseReplenishment {
 
 	public static void databaseReplenishment() {
-		replenishmentFlowerNames();
-		replenishmentPackagingTypess();
+		replenishmentFlowers();
+		replenishmentPackagings();
 	}
 
-	private static void replenishmentFlowerNames() {
+	private static void replenishmentFlowers() {
 		addFlower(new Flower("Garden", "Alstroemeria", 10));
 		addFlower(new Flower("Garden", "Anemone", 12));
 		addFlower(new Flower("Garden", "Aster", 14));
@@ -25,7 +25,7 @@ public class DatabaseReplenishment {
 		addFlower(new Flower("Garden", "Tulip", 26));
 	}
 
-	private static void replenishmentPackagingTypess() {
+	private static void replenishmentPackagings() {
 		addPackaging(new Packaging("Grid", 2));
 		addPackaging(new Packaging("Paper", 4));
 		addPackaging(new Packaging("Felt", 6));
