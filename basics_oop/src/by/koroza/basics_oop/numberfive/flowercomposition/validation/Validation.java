@@ -6,18 +6,27 @@ import by.koroza.basics_oop.numberfive.flowercomposition.database.DataBase;
 
 public class Validation {
 	private static final String REG_EX_NUMBER_FLOWER = "\\d+";
-	private static final String MESSAGE_YOU_ENTERED_NUMBER_INCORRECTLY = "You entered number flower inCorrectly";
+	private static final String MESSAGE_YOU_ENTERED_NUMBER_INCORRECTLY = "You entered number flower incorrectly";
+	private static final String MESSAGE_YOU_ENTERED_QUANTITY_INCORRECTLY = "You entered quantity flowers incorrectly";
 
 	public static boolean validationEnterNumberFlower(String number) {
 		boolean isCorrect = validationOnDigit(number);
 		if (isCorrect == true) {
 			int numberFlower = parseInt(number);
-			if (numberFlower > DataBase.getFlowerNames().size()) {
+			if (numberFlower > DataBase.getFlowers().size()) {
 				isCorrect = false;
 			}
 		}
 		if (isCorrect == false) {
 			System.out.println(MESSAGE_YOU_ENTERED_NUMBER_INCORRECTLY);
+		}
+		return isCorrect;
+	}
+
+	public static boolean validationEnterQuantityFlowers(String quantity) {
+		boolean isCorrect = validationOnDigit(quantity);
+		if (isCorrect == false) {
+			System.out.println(MESSAGE_YOU_ENTERED_QUANTITY_INCORRECTLY);
 		}
 		return isCorrect;
 	}
