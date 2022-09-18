@@ -38,10 +38,14 @@ public class SelectionPackaging {
 		do {
 			System.out.println(MESSAGE_ENTER_NUMBER_PACKAGING + DataBase.getPackagings().size());
 			number = scan.nextLine();
-		} while (Validation.validationEnterNumberFlower(number) == false);
-		
+		} while (Validation.validationEnterNumberPackaging(number) == false);
 		numberPackaging = parseInt(number);
 		return numberPackaging;
+	}
+
+	private static int parseInt(String number) {
+		int numberFlower = Integer.parseInt(number);
+		return numberFlower;
 	}
 
 }
