@@ -9,7 +9,16 @@ public class FlowerComposition {
 
 	public static void createFlowerComposition() {
 		List<Flower> flowers = CreateBouquet.selectionFlowers();
-		Packaging packaging = SelectionPackaging.selectionFlowers();
-		
+		if (flowers.size() > 0) {
+			Packaging packaging = SelectionPackaging.selectionFlowers();
+			printFlowers(flowers);
+		}
+	}
+
+	private static void printFlowers(List<Flower> flowers) {
+		System.out.println("You made a bouquet of the following flowers: ");
+		for (int i = 0; i < flowers.size(); i++) {
+			System.out.println(i + " - " + flowers.get(i));
+		}
 	}
 }
