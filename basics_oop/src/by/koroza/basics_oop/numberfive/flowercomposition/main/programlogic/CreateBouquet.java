@@ -9,22 +9,14 @@ import by.koroza.basics_oop.numberfive.flowercomposition.entity.flower.Flower;
 import by.koroza.basics_oop.numberfive.flowercomposition.validation.Validation;
 
 public class CreateBouquet {
-	private static List<Flower> flowers = new ArrayList<>();
 	private static final String MESSAGE_CHOOSE_FLOWER = "Good afternoon! Choose the flowers you want in the bouquet.";
 	private static final String MESSAGE_ENTER_NUMBER_FLOWER = "Enter the number of the flower you want in the bouquet or if you want to exit enter - ";
 	private static final String MESSAGE_ENTER_QUANTITY_FLOWERS = "Enter quantity of the flowers you want in the bouquet.";
 	private static final String MESSAGE_ENTER_ANSWER_ON_COMPLETE_BOUGUET = "Would you like to complete the bouquet? Yes - 0, No - 1";
 	private static final String CODE_ANSWER_NO = "1";
 
-	public static List<Flower> getFlowers() {
-		return flowers;
-	}
-
-	public static void setFlowers(List<Flower> flowers) {
-		CreateBouquet.flowers = flowers;
-	}
-
 	public static void selectionFlowers() {
+		List<Flower> flowers = new ArrayList<>();
 		boolean isFlagWhile = true;
 		System.out.println(MESSAGE_CHOOSE_FLOWER);
 		while (isFlagWhile == true) {
@@ -32,8 +24,7 @@ public class CreateBouquet {
 			int numberFlower = enterNumberFlower();
 			if (numberFlower < DataBase.getFlowers().size()) {
 				int quantity = enterQuantityFlowers();
-				addFlower(numberFlower, quantity);
-				// print();
+				addFlower(flowers, numberFlower, quantity);
 				String answer = enterAnswerOnCompleteBouguet();
 				if (answer.equals(CODE_ANSWER_NO)) {
 					isFlagWhile = false;
@@ -86,16 +77,10 @@ public class CreateBouquet {
 		return numberFlower;
 	}
 
-	private static void addFlower(int number, int quantity) {
+	private static void addFlower(List<Flower> flowers, int number, int quantity) {
 		Flower flower = DataBase.getFlowers().get(number);
 		for (int i = 0; i < quantity; i++) {
 			flowers.add(flower);
-		}
-	}
-
-	private static void print() {
-		for (Flower flower : flowers) {
-			System.out.println(flower);
 		}
 	}
 }

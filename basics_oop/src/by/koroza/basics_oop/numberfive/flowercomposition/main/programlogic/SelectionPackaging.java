@@ -7,15 +7,15 @@ import by.koroza.basics_oop.numberfive.flowercomposition.validation.Validation;
 
 public class SelectionPackaging {
 	private static final String MESSAGE_WANT_CHOOSE_PACKAGING = "Would you like to choose a packaging?";
-	private static final String MESSAGE_ENTER_NUMBER_PACKAGING = "Enter the number of the flower you want in the bouquet or if you want to exit enter - ";
+	private static final String MESSAGE_ENTER_NUMBER_PACKAGING = "If you need packaging for a bouquet, enter the packaging number, if not, enter - ";
 
 	public static void selectionFlowers() {
 		boolean isFlagWhile = true;
 		System.out.println(MESSAGE_WANT_CHOOSE_PACKAGING);
 		while (isFlagWhile == true) {
 			DataBase.printPackagingTypes();
-			int numberFlower = enterNumberFlower();
-			
+			int numberPackaging = enterNumberPackaging();
+
 			if (numberFlower < DataBase.getFlowers().size()) {
 				int quantity = enterQuantityFlowers();
 				addFlower(numberFlower, quantity);
@@ -29,18 +29,19 @@ public class SelectionPackaging {
 			}
 		}
 	}
-	
+
 	private static int enterNumberPackaging() {
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		int numberPackaging = 0;
 		String number = "";
 		do {
-			System.out.println(MESSAGE_ENTER_NUMBER_FLOWER + DataBase.getFlowers().size());
+			System.out.println(MESSAGE_ENTER_NUMBER_PACKAGING + DataBase.getPackagings().size());
 			number = scan.nextLine();
 		} while (Validation.validationEnterNumberFlower(number) == false);
-		numberFlower = parseInt(number);
-		return numberFlower;
+		
+		numberPackaging = parseInt(number);
+		return numberPackaging;
 	}
 
 }
