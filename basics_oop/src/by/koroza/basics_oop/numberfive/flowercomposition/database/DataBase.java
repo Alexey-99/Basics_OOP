@@ -65,7 +65,7 @@ public class DataBase {
 		DataBase.flowers.add(flower);
 	}
 
-	public static void addpackaging(Packeging packeging) {
+	public static void addPackaging(Packeging packeging) {
 		DataBase.packagings.add(packeging);
 	}
 
