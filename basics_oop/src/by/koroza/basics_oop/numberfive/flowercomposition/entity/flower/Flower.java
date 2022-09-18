@@ -65,6 +65,20 @@ public class Flower {
 			return false;
 		}
 		Flower flower = (Flower) object;
+		if (groupName == null) {
+			if (flower.groupName != null) {
+				return false;
+			}
+		} else if (!groupName.equals(flower.groupName)) {
+			return false;
+		}
+		if (name == null) {
+			if (flower.name != null) {
+				return false;
+			}
+		} else if (!name.equals(flower.name)) {
+			return false;
+		}
 		if (price != flower.price) {
 			return false;
 		}
