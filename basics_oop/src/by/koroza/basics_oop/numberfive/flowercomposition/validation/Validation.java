@@ -35,7 +35,7 @@ public class Validation {
 		return isCorrect;
 	}
 
-	public static boolean validationEnterAnswerOnCompleteBouguet(String answer) {
+	public static boolean validationEnterAnswerYesOrNo(String answer) {
 		boolean isCorrect = Pattern.matches(REG_EX_ANSWER_COMPLETE_BOUGUET, answer);
 		if (isCorrect == false) {
 			System.out.println(MESSAGE_YOU_ENTERED_ANSWER_INCORRECTLY);

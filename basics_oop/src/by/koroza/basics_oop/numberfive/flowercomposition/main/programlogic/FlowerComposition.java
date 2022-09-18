@@ -10,6 +10,6 @@ public class FlowerComposition {
 	public static void createFlowerComposition() {
 		List<Flower> flowers = CreateBouquet.selectionFlowers();
 		Packaging packaging = SelectionPackaging.selectionFlowers();
+		
 	}
-
 }

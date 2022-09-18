@@ -71,7 +71,7 @@ public class CreateBouquet {
 		do {
 			System.out.println(MESSAGE_ENTER_ANSWER_ON_COMPLETE_BOUGUET);
 			answer = scan.nextLine();
-		} while (Validation.validationEnterAnswerOnCompleteBouguet(answer) == false);
+		} while (Validation.validationEnterAnswerYesOrNo(answer) == false);
 		return answer;
 	}
 
