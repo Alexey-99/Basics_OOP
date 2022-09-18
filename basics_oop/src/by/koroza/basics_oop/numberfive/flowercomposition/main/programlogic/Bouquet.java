@@ -33,7 +33,7 @@ public class Bouquet {
 			if (numberFlower < DataBase.getFlowers().size()) {
 				int quantity = enterQuantityFlowers();
 				addFlower(numberFlower, quantity);
-				//print();
+				// print();
 				String answer = enterAnswerOnCompleteBouguet();
 				if (answer.equals(CODE_ANSWER_NO)) {
 					isFlagWhile = false;
@@ -92,9 +92,9 @@ public class Bouquet {
 			flowers.add(flower);
 		}
 	}
-	
+
 	private static void print() {
-		for(Flower flower: flowers) {
+		for (Flower flower : flowers) {
 			System.out.println(flower);
 		}
 	}
