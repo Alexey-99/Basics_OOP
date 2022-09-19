@@ -19,7 +19,7 @@ import by.koroza.basics_oop.numberfive.flowercomposition.main.programlogic.Flowe
 
 public class Main {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		databaseReplenishment();
 		FlowerComposition.createFlowerComposition();
 	}
